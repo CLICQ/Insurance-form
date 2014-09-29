@@ -1,0 +1,105 @@
+/*}
+Footer
+{*/
+#footer
+{
+    font-size: 90%;
+    padding-bottom: 2em;
+}
+#footer .reducer
+{
+    -zoom: 1;
+}
+#footer .reducer:after
+{
+    content: '';
+    display: block;
+    clear: both;
+}
+#footer .copyright
+{
+    float: left;
+}
+#footer .made_in
+{
+    float: left;
+}
+#footer .hr
+{
+    border: 1px solid #999;
+    border-left: none;	
+    border-right: none;
+    height: 1px;
+    margin: 0 -5px;
+    line-height: 0;
+    font-size: 0;
+}
+
+#footer .copyright
+{
+    margin-top: 1em;
+    width:45%;
+}
+
+#footer .copyright .links,
+#footer .raexpert {
+    display: -moz-inline-stack;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+#footer .copyright .links {
+    width: 40%;
+    min-width: 300px;
+}
+
+#footer .raexpert {
+    width: 100px;
+    vertical-align: top;
+    text-align: center;
+}
+
+#footer .raexpert p {
+    margin: 0;
+}
+
+#footer .copyright p 
+{
+    margin: .3em 0;
+}
+
+#footer .made_in 
+{
+    float: left;
+    position:relative;
+    overflow:hidden;
+}
+#footer .made_in a 
+{
+    padding-right: 0;
+    background-image: none;
+}
+#footer .made_in p 
+{
+    margin-left: 100px;
+    line-height: 1.4em;
+    float:left;
+}
+#footer .made_in p img 
+{
+    position: absolute;
+    top: 1.4em;
+    left: 0;
+}
+
+#footer .social
+{
+    float:right;
+    padding:1.4em 0 0 0;
+}
+
+#footer .social a
+{
+    margin:0 10px 0 0;
+}

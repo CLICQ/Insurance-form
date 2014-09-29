@@ -1,0 +1,41 @@
+.radio-item
+{
+	width: 100px;
+	font-size: 16px;
+}
+.for-one{
+	display:none;	
+}
+.for-all{
+	display:none;
+}
+.font-16
+{
+	font-size:16px;
+}
+.form-elem_label{
+	font-size:14px;	
+}
+
+.ui-datepicker-trigger
+{
+	/*margin-left:-25px;*/
+	display:none;
+	
+}
+.input-radio{
+	height:13px !important;
+}
+.DatePicker{
+	cursor: default;
+}
+section{
+	font-size:16px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-weight: bold;
+}
+section-label{
+	font-size:16px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-weight: normal;
+}

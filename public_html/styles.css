@@ -1,0 +1,123 @@
+.myh1
+{
+	font-family: Georgia, Times, serif;
+	font-size: 34px;
+	font-weight: normal;
+	height: 40px;
+	z-index:5;	
+}
+.reducer_h1 {
+	background: #a6ce39;
+	padding: 20px 42px 5px 42px;
+	z-index:5;	
+	position:relative;
+}
+.field-name{
+	color: #444;
+	height: 30px;
+	font-size: 14px;
+	line-height: 1.2;
+	font-family: arial, sans-serif;
+	text-align:left;
+}
+.field-name{
+font-family: 'Arial Обычный','Arial';
+font-weight: 400;
+font-style: normal;
+font-size: 13px;
+color: #333;
+text-align: left;
+line-height: normal;
+}
+.section
+{
+	color: rgb(68, 68, 68);
+	font-size: 20px;
+	font-weight: normal;
+	font-family: Georgia, Times, serif;
+	line-height: 1.2;
+	height:24px;
+	padding-top: 20px;
+	/*border-bottom: 1px solid gray;*/
+
+}
+.img-shadow
+{
+	z-index:0;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 102px;
+}
+.field-data
+{
+	width:300px;
+	padding: 5px 0;
+	
+
+}
+.Calculator
+{
+	font-size: 14px;
+	line-height: 1.2;
+	font-family: arial, sans-serif;	
+	color: rgb(68, 68, 68);
+}
+.radio-label
+{
+	height:24px;
+	width:72px;
+	font-size: 12px;
+	line-height: 1.2;
+	font-family: arial, sans-serif;	
+	color: rgb(68, 68, 68);		
+}
+
+body 
+{
+	background-color: rgb(239,240,230);
+}
+.center1200
+{
+	background-image: none;
+	background-color: rgb(239,240,230);
+	
+}
+#img-banner
+{
+	width: 983px;
+	height: 201px;	
+}
+table.mheader
+{
+	margin: 10px 0 5px 0;
+}
+
+.breadcrumbs-wrapper {
+	margin: 30px 0;
+	width: 980px;
+	height: 50px;
+
+}
+.breadcrumbs_item{
+	background-color: #9E1B32;
+	background-image: url("./images/breadcrumbs-item-active.gif") !important;
+	background-position: right top;
+	border-left: 1px solid #9E1B32;
+	color: #FFF !important;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	font-size: 17px;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: normal;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+	height: 28px;
+	line-height: 24px;
+	margin: 0 10px 0 0;
+	padding: 0 30px 0 25px;
+	width:120px;
+	list-style-type: none;
+/*	height: 20px;
+	width: 100px;*/
+}

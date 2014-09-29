@@ -1,0 +1,511 @@
+/*
+ Copyright Art. Lebedev | http://www.artlebedev.ru/
+ Created 2010-03-03 by vlalek
+ Updated 2010-07-27 by levenets
+ Updated 2010-09-13 by vlalek
+*/
+
+/*}
+Common
+{*/
+
+.f_params
+{
+display: none;
+}
+
+form, .fieldset, .legend, .row, .label, .field, .example, .required_message, .valid_message
+{
+display: block;
+margin: 0;
+padding: 0;
+text-decoration: none;
+line-height: 1.2;
+}
+
+form
+{
+	width: 100%;
+	overflow:hidden;
+}
+form, .legend, .example, .label, .unit, input.text, textarea, select, .zf-combo, .zf-input-day, .zf-input-year
+{
+color: #444;
+}
+form .field .button
+{
+margin-top: 0;
+margin-left: -10px;
+}
+form .range .button, form .range .button {
+	margin-top: -10px;
+	margin-left: 0;
+}
+form .button .button_c {
+	font-size: 95%;
+}
+#content input.text, 
+#content input.button, 
+textarea, 
+
+button, 
+.zf-combo, .zf-button, .zf-input-day, .zf-input-year
+{
+	font-size: 100%;
+	font-family: Arial, sans-serif;
+	padding: 5px 3px 3px;
+	margin-right: 0.7em;
+	margin-top:-0.1em;
+}
+
+select
+{
+	font-size: 120%;
+	font-family: Arial, sans-serif;
+	margin-right: 0.2em;
+}
+
+textarea {
+	font-family:Arial;
+}
+
+
+.fieldset
+{
+position: relative;
+width: 100%;
+padding: 0 42px 0;
+}
+.legend
+{
+display: block;
+margin: 0 0 1em;
+padding: 0;
+font-size: 150%;
+font-weight: normal;
+font-family: Georgia, Times, serif;
+}
+.row {
+	/*position: relative;*/
+	clear: left;
+	width: 100%;
+	margin: 0 0 2em 0;
+}
+.row.type_checkbox {
+	margin-bottom:0.2em;
+}
+
+.label {
+	width: 10em;
+	margin-right: -100%;
+}
+.label, .unit {
+	float: left;
+	padding: 0.1em 0 0;
+}
+.unit {
+	margin-left: 0.3em;
+}
+.for_selector {
+	padding-top: 0.3em;
+}
+.for_selector .label {
+	padding-top: 0;
+}
+.field {
+	/*position:relative;*/
+	-float: left;
+	padding-left: 12em;
+	zoom: 1;
+	_width: 100%;
+}
+.submit dl {
+	width: auto;
+}
+dl.button 
+{
+	margin-top: 1em;
+	float: left;
+}
+dl.button .label
+{
+	display: none;
+}
+dl.button .field 
+{
+	padding-left: 0;
+	float: left;
+}
+dl.wide .label {
+	float: none;
+	width: auto;
+	margin-right: 0;
+	margin-bottom: 0.5em;
+}
+dl.wide .field {
+	margin-left: 0;
+	padding-left: 0;
+}
+input.text, textarea {
+	display: inline-block;
+}
+textarea {
+	width: 80%;
+	min-width: 28em;
+	max-width: 45em;
+}
+input.text {
+	width:20em;	
+}
+input.presized {
+	margin-right: 0.3em;
+}
+textarea {
+	height: 10em;
+	overflow: visible;
+}
+
+/*}
+Text & messages: comment, example, required, valid
+{*/
+.unit {
+	display: inline;
+}
+.required_message, .valid_message {
+	font-size: 0.9em;
+	clear: left;
+	padding:0.3em 0.2em 0;
+}
+
+.example {
+	font-size: 0.9em;
+}
+
+.type_phone input.presized {float:none;}
+
+.zf-checkboxgroup .example {margin-left:20px;}
+
+.zf-invalid .valid_message {
+	display:block;
+}
+
+/*}
+Disabled fileds
+{*/
+
+.zf-disabled label, .zf-disabled .legend, .zf-disabled ins
+{
+opacity: 0.3;
+}
+.hide_disabled .zf-disabled
+{
+display: none;
+position: absolute;
+left: -5000px
+}
+
+/*}
+Invalid fields
+{*/
+
+form .zf-invalid input, form .zf-invalid select, form .zf-invalid textarea
+{
+color: red;
+}
+form .valid_message {
+	display:none;
+}
+.valid_message,
+form.zf-submitted .required_message {
+	display:block;
+	font-size:10pt;
+	color: #fff;
+	background: #9d2437;
+	padding: 0.5em 1em .6em;
+	margin-bottom: -1em;
+	float: left;
+	border: 1px solid #e1d6d4;
+	position: absolute;
+	z-index: 1;
+}
+form .zf-invalid .valid_message .popup_box_c {color:red;}
+
+/*}
+Required fields
+{*/
+.zf-inited .zf-required .required_message {
+	display: none;
+}
+.zf-submitted .zf-required .required_message {
+	display: block;
+}
+.zf-inited .zf-required-ok .required_message {
+	display: none;
+}
+
+/*}
+Radio & checkbox fields
+{*/
+.selector {
+	line-height: 1.2em;
+	position: relative;
+	/*width: 100%;*/
+	margin: 0 0 0.6em 0;
+}
+.optgroup {
+	margin: 0 0 0 0;
+	padding: 0 0 1em 0;
+}
+.optgroup .label {
+	display: block;
+	font-weight: normal;
+	float: none;
+	width: auto;
+	margin: 0 0 0.6em 0;
+}
+.selector input
+{
+position: absolute;
+left: 0;
+top: 0.7em;
+top: 0.6em\9;
+margin: -8px 0 0 0;
+margin: -9px 0 0 -3px\9;
+}
+.selector label
+{
+position: relative;
+float: left;
+//display: inline;
+width: auto;
+margin: 0 0 0 18px;
+}
+.selector label .selected
+{
+display: inline! important;
+}
+.horizontal .optgroup
+{
+float: left;
+width: auto;
+}
+.horizontal .selector
+{
+//display: inline;
+float: left;
+width: auto;
+margin-right: 2em;
+}
+
+
+/*}
+Datetime
+{*/
+
+.input-hour
+{
+margin-left: 1em;
+}
+.input-minute:before, .input-second:before
+{
+content: ':';
+margin-left: 0.2em;
+margin-right: 0.2em;
+}
+
+/*}
+Common styles
+{*/
+
+.row:after, .row .field:after, .selector:after
+{
+content: '';
+height: 0;
+display: block;
+clear: both;
+}
+
+.for_input .label label, .for_textarea .label label, .for_select .label label
+{
+display: block;
+}
+
+
+/*}
+Combobox
+{*/
+
+.type_combobox .field
+{
+position: relative;
+z-index: 998;
+}
+.type_combobox .zf-combo
+{
+ /*width: 100%;*/
+}
+.type_combobox .zf-button
+{
+/*
+font-size: 65%;
+height: 2.6em;
+width: 2.5em;
+padding: 0;
+position: relative;
+top: -0.2em;
+//top: 0.1em;
+*/
+display:none;
+}
+.zf-combolist
+{
+display: none;
+}
+.zf-combolist-active, .zf-combolist-active .zf-combolist
+{
+z-index: 999;
+}
+.zf-combolist-active .zf-combolist
+{
+display: block;
+position: absolute;
+//top: 1.7em; 
+//left: 12em;
+}
+
+
+
+.zf-combo-box .zf-button {
+	display:none;
+	width:19px;
+	overflow:hidden;
+	background-image:url(zf-sprite.png);
+	background-position:-47px .3em;
+	background-repeat:no-repeat
+}
+#with-js .zf-combo-box .zf-button{display:inline}
+
+
+
+.zf-repeat-buttons {
+	margin-top: -1em;
+	margin-bottom: 3em;
+	margin-left: 12em;
+}
+
+/*}
+Placeholder
+{*/
+.placeholder
+{
+color: #999999;
+}
+
+/*}
+Tabs sheets
+{*/
+.tabs_sheets .tabs
+{
+display: none;
+}
+.zf-inited .tabs_sheets .tabs
+{
+display: block;
+margin: 0 0 1em -0.5em;
+zoom: 1;
+}
+.zf-inited .tabs_sheets .tabs:after
+{
+content: '';
+display: block;
+clear: left;
+}
+.zf-inited .tabs_sheets .tabs .tab
+{
+float: left;
+margin: 0 1em 0 0;
+padding: 0.1em 0.5em;
+cursor: pointer;
+}
+.zf-inited .tabs_sheets .tabs .zf-selected
+{
+background: silver;
+cursor: default;
+}
+.zf-inited .tabs_sheets .tab_sheet
+{
+display: none;
+}
+.zf-inited .tabs_sheets .zf-selected
+{
+display: block;
+}
+
+/*}
+Range
+{*/
+.range:after
+{
+content: '';
+height: 0;
+display: block;
+clear: both;
+}
+.range .legend, .range .fieldset, .range .reducer, .range .row, .range .label, .range .field, .range input, .range select, .range .example
+{
+clear: none;
+float: left;
+width: auto;
+font-weight: normal;
+margin: 0;
+padding: 0;
+}
+.range .reducer
+{
+margin: 0;
+padding: 0;
+}
+.range .legend
+{
+width: 11em;
+}
+.range .example
+{
+padding-left: 0.25em;
+}
+.range .legend, .range .example
+{
+display: block;
+}
+.range .label, .range .field
+{
+padding: 0.3em 0.35em 0.3em 0;
+}
+.range .label
+{
+padding-top: 0.4em;
+}
+.row.level2 {
+	margin-bottom:1em;
+	font-style: italic;
+}
+.zf-number {
+	text-align: right;
+	padding-right:0.2em;
+	word-spacing: -0.1em;
+}
+.hidden {
+	display:none;
+}
+
+
+
+.fieldset .reducer {
+	position: relative;
+}
+
+
+
+.text_short  .text {
+	width: 5em;
+}

@@ -1,0 +1,66 @@
+.radio-item
+{
+	width: 150px;
+	font-size: 16px;
+}
+.for-one{
+	display:none;	
+}
+.for-all{
+	display:none;
+}
+.font-16
+{
+	font-size:16px;
+}
+.form-elem_label{
+	font-size:14px;	
+}
+
+.ui-datepicker-trigger
+{
+	/*margin-left:-25px;*/
+	display:none;
+	
+}
+.input-radio{
+	height:13px !important;
+}
+.DatePicker{
+	cursor: default;
+}
+section{
+	font-size:16px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-weight: bold;
+}
+section-label{
+	font-size:16px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-weight: normal;
+}
+row-gray{
+	background-color:gray;
+}
+.basParam,
+.advParam {
+	margin-left:100px;		
+}
+.years{
+	width:30px !important;
+}
+.InsuredSum{
+	vertical-align:middle;
+}
+.divError{
+	color:red;
+	}
+::-webkit-input-placeholder {color:red;}
+::-moz-placeholder          {color:red;}/* Firefox 19+ */
+:-moz-placeholder           {color:red;}/* Firefox 18- */
+:-ms-input-placeholder      {color:red;}
+
+#PeopleCount{
+	width: 20px;
+	border: 0px solid;
+}

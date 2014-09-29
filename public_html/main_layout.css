@@ -1,0 +1,21 @@
+/*}
+Layout
+{*/
+body
+{
+font-size: 85%;
+font-family: arial, sans-serif;
+background: #fff;
+color: #000;
+margin: 0;
+padding: 0;
+min-width: 989px;
+}
+#header .reducer, #navigation .reducer, #content .reducer, #footer .reducer
+{
+padding: 0 15px 0 20px;
+}
+
+iframe[name = 'google_conversion_frame']{
+	display: none;
+}

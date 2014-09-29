@@ -1,0 +1,157 @@
+﻿/*
+    RSB CSS Layout Styles
+    Positioning elements on pages
+*/
+
+.b-wrapper {
+    width: 980px;
+}
+.b-page-frame_inner {
+    padding-top: 0;
+}
+.b-page-content {
+    padding-bottom: 80px; /* footer height */
+    padding-top: 0;
+}
+.b-form-search-main {
+    position: relative;
+}
+.b-form-search-main .b-button-search {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* header styles */
+.b-page-header .b-line {
+    overflow: hidden;
+}
+.b-logo,
+.b-logo-partner {
+    height: 48px;
+    margin-bottom: 10px;
+}
+.b-logo {
+    float: left;
+    width: 400px;
+    background: transparent url("images/logo.png") left top no-repeat;
+}
+.b-logo-partner {
+    float: right;
+    width: 170px;
+    background: transparent url("images/logo-oktogo.png") right top no-repeat;
+}
+.b-top-banner {
+    height: 210px;
+    background: transparent url("images/top.jpg") 0 0 no-repeat;
+}
+
+.b-top-banner a {
+    float:right; 
+    position:relative; 
+    top:182px; 
+    right:14px; 
+    z-index:2;  
+    color: #FFFFFF !important; 
+    text-decoration: underline; 
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    font-weight: normal;    
+}
+
+
+/* footer styles */
+.b-page-footer {
+    height: 80px;
+    margin-top: -80px;
+}
+.b-column-sidebar .b-inline {
+    margin-right: 10px;
+}
+.b-provider-logo {
+    background: transparent url("images/logo-provider.png") 0 0 no-repeat;
+    height: 22px;
+    margin-top: -3px;
+}
+.b-faq-link {
+    margin-left: 0px;
+    font-size: 11px;
+}
+
+
+/* hsr styles */
+.b-hsr-panel-summary,
+.b-hsr-panel-form {
+    padding: 15px 20px 20px 20px;
+}
+.b-search-controls-top {
+    margin-bottom: 5px;
+}
+.b-hsr-hotel {
+    padding: 12px 15px;
+}
+.b-hsr-inner .b-hsr-warning {
+    padding: 5px 20px;
+}
+
+
+/* availability block at hotel page */
+.hotelAvailability {
+    margin-top: 20px;
+    position: relative;
+}
+.b-form-hotel-availability .b-button-get-availability {
+    margin-top: 21px;
+}
+
+
+/* breadcrumbs */
+.b-breadcrumbs {
+    text-align: center;
+}
+.b-breadcrumbs-wrapper {
+    margin-bottom: 20px;
+}
+.b-breadcrumbs_item {
+    float: none;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/* form elements */
+.b-top-search .b-page-title {
+    display: none;
+}
+.b-form-search-main .b-room-labels, 
+.b-form-search-main .b-destination, 
+.b-form-search-main .b-form-submit, 
+.b-form-search-main .b-dates {
+    margin-top: 0;
+}
+.b-form-search-main .b-rooms {
+    margin-top: 18px;
+}
+.ian ol {
+    padding-left: 27px;
+}
+
+
+/* HSR filters */
+.b-filter-price {
+    margin-right: 25px;
+}
+.b-filter-stars {
+    margin-left: 20px;
+}
+.b-elem-search-name {
+    width: 245px;
+}
+.b-elem-price-from, 
+.b-elem-price-to {
+    width: 50px;
+}
+.b-filter-ta {
+    margin-left: 15px;
+}
