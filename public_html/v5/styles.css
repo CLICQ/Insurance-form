@@ -64,3 +64,8 @@ row-gray{
 	width: 20px;
 	border: 0px solid;
 }
+
+.b-breadcrumbs_item a{
+	text-decoration: none;
+	color:#663;
+}

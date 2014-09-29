@@ -1,4 +1,6 @@
-<? session_start(); ?>
+<? 	header('Content-Type: text/html; charset=utf-8');
+	session_start(); ?>
+
 <!DOCTYPE html>
 <html><head>
         <title>Калькулятор</title>
@@ -215,12 +217,10 @@ $GridInsuredPerson = substr($GridInsuredPerson, 0, strlen($GridInsuredPerson)-1)
 			<div class="b-page-content-inner">
 				<div class="b-breadcrumbs-wrapper b-breadcrumbs-index b-wrapper">
 					<ul class="b-breadcrumbs">
-							<li class="b-breadcrumbs_item breadcrumbs-item-current">Калькулятор</li>
-							<li class="b-breadcrumbs_item breadcrumbs-item-disabled">Поиск</li>
-							<li class="b-breadcrumbs_item breadcrumbs-item-disabled">Отели</li>
-							<li class="b-breadcrumbs_item breadcrumbs-item-disabled">Бронирование</li>
-							<li class="b-breadcrumbs_item breadcrumbs-item-disabled">Оплата</li>
-							<li class="b-breadcrumbs_item breadcrumbs-item-disabled">Результат</li>
+							<li class="b-breadcrumbs_item breadcrumbs-item-disabled"><a href='index.php'>Расчет</a></li>
+							<li class="b-breadcrumbs_item breadcrumbs-item-current">Оформление</li>
+							<li class="b-breadcrumbs_item breadcrumbs-item-disabled"><a href="#">Оплата</a></li>
+							<li class="b-breadcrumbs_item breadcrumbs-item-disabled"><a href="#">Результат</a></li>
 					</ul>
 				</div>
 
@@ -381,7 +381,7 @@ $GridInsuredPerson = substr($GridInsuredPerson, 0, strlen($GridInsuredPerson)-1)
 												<div class="b-form-elem_wrapper">
 													<div class="b-inline " style="vertical-align:bottom; width:250px">
 														<input type="checkbox" style="vertical-align:middle"/>
-														<span style="vertical-align:middle">Я согласен с <a href="Правила.pdf" target="_blank">правилами страхования</a></span>
+														<span style="vertical-align:middle">Я согласен с <a href="Oferta.pdf" target="_blank">правилами страхования</a></span>
 													</div> <!--onclick='$("#dialog").dialog({modal:true, width:900, height:900 });'-->
 												</div>
 											</div>
