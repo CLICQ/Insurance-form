@@ -665,8 +665,19 @@
 										}
 									}
 								isAllFill();
+								
+								//чтобы при открытии дейтпикера нельзя было выбрать дату раньше чем дата начала поездки +1 день (уточнить у Татьяны)
+								if (begDate != 'Invalid Date')
+								{
+									//запретить даты раньше полученной +1 день
+									begDate.setDate(begDate.getDate()+1);
+									$("#ExpirationDate").datepicker( "option", "minDate", begDate );
+								}
 				}
-	});
+		});
+		
+		
+	
 } //end document.ready
 </script>
 
