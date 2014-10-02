@@ -4,110 +4,41 @@
 	
 	define ("VIRTU_URL","http://vfos.virtusystems.ru");
 
-	//получение курса валют
-	
-	// Базовый URL скрипта на cbr.ru
-	$scripturl = 'http://www.cbr.ru/scripts/XML_daily.asp';
 
-	// Начальная дата для запроса  (сегодня - 2 дня)
-	//$date_1=date('d/m/Y', time()-172800);
-
-	// Конечная дата (чтобы учитывать завтра добавьте параметр time()+86400)
-	//$date_2=date('d/m/Y');
-
-	// Таким образом, мы получим данные либо за 2, либо за 3 последних дня.
-	// За 2 - если на "сегодня" курс еще не выставили, иначе - за 3
-
-	// Код валюты в архиве данных cbr.ru
-	//доллар
-	$currency_code='R01235';
-	//евро
-	$currency_code='R01239';
-
-	// URL для запроса данных
-	//$requrl = "{$scripturl}?date_req1={$date_1}&date_req2={$date_2}&VAL_NM_RQ={$currency_code}";
-
-	//$doc = file($requrl);
-	$doc = file($scripturl);
-	$doc = implode($doc, '');
-
-	// инициализируем массив
-	$r = array();
-
-	// ищем <ValCurs>...</ValCurs>
-/*	if(preg_match("/<ValCurs.*?>(.*?)<\/ValCurs>/is", $doc, $m))
-		// а потом ищем все вхождения <Record>...</Record>
-		preg_match_all("/<Record(.*?)>(.*?)<\/Record>/is", $m[1], $r, PREG_SET_ORDER);
-*/
-	$m = array();	// его уже использовали, реинициализируем
-	$d = array();	// этот тоже проинициализируем
-
-	// Сканируем на предмет самых нужных цифр
-	for($i=0; $i<count($r); $i++) {
-		/*if(preg_match("/Date=\"(\d{2})\.(\d{2})\.(\d{4})\"/is", $r[$i][1],$m)) {
-			$dv = "{$m[1]}/{$m[2]}/{$m[3]}"; // Приводим дату в норм. вид
-		*/	if(preg_match("/<Nominal>(.*?)<\/Nominal>.*?<Value>(.*?)<\/Value>/is", $r[$i][2], $m)) {
-				$m[2] = preg_replace("/,/",".",$m[2]);
-				$d[] = array($dv, $m[1], $m[2]);
-				}
-			}
-		//}
-	
-	foreach($d as $n)
-	{
-	var_dump('valuta'.$n[0]);}
-	/*$last = array_pop($d);				# последний известный день
-	$prev = array_pop($d);				# предпосл. известный день
-	$date = $last[0];				# отображаемая дата
-	$rate = sprintf("%.2f",$last[2]);		# отображаемый курс
-	# отображаемое изменение курса, например, "+0.02"
-	$delta = (($last[2]>$prev[2])?"+":"").sprintf("%.2f",$last[2]-$prev[2]);
-
-	#echo("$date: $rate ($delta)<BR>");
-
-	header("Content-type: image/png"); # Отдаем HTTP-заголовок с типом данных
-	# Создаем пустое изображение
-	$im = @ImageCreate(88, 41) or die("Cannot do ImageCreate()");
-
-	# Создаем всякие цвета
-	$bg = ImageColorAllocate($im, 240, 255, 233);
-	$fg = ImageColorAllocate($im, 0, 0, 0);
-	$fg2 = ImageColorAllocate($im, 120, 0, 0);
-	$bdr = ImageColorAllocate($im, 224,224,224);
-	$bdr2 = ImageColorAllocate($im, 160,160,160);
-
-	# Рисуем первую строку - дату
-	$x = (88-ImageFontWidth(2)*strlen($date))/2;
-	ImageString($im, 2, $x, 2, $date, $fg);
-
-	# Рисуем вторую строку
-	ImageString($im, 2, 25, 14, "USD/RUR", $fg2);
-
-	# Рисуем третью строку - курс и изменение
-	ImageString($im, 2, 6, 25, "$rate ($delta)", $fg2);
-
-	# Рисуем рамки
-	ImageRectangle($im, 0, 0, ImageSX($im)-2, ImageSY($im)-2, $bdr);
-	ImageLine($im,ImageSX($im)-1,1,ImageSX($im)-1, ImageSY($im)-1,$bdr2);
-	ImageLine($im,1,ImageSY($im)-1,ImageSX($im)-1, ImageSY($im)-1,$bdr2);
-
-	# Отдаем изображение на выход
-	ImagePNG($im);
-
-	# Освобождаем память из-под
-	ImageDestroy($im);
-	//заменить дату на текущую
-	/*$xml = 'http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/03/2002';
-	$dom = new DomDocument;
-	$dom->preserveWhiteSpace = FALSE;
-	$dom->loadXML($xml);
-	
-	$params = $dom->documentElement->firstChild->getElementsByTagName('param');
-	foreach ($params as $param) {
-       // Чтобы получать значения атрибутов тега - заменяем nodeValue на getAttribute('атрибут')
-       echo $param -> nodeValue.'<br>';
-	}*/
-
+	// Получаем текущие курсы валют в rss-формате с сайта www.cbr.ru 
+		  $content = get_content(); 
+		  // Разбираем содержимое, при помощи регулярных выражений 
+		  $pattern = "#<Valute ID=\"([^\"]+)[^>]+>[^>]+>([^<]+)[^>]+>[^>]+>[^>]+>[^>]+>[^>]+>[^>]+>([^<]+)[^>]+>[^>]+>([^<]+)#i"; 
+		  preg_match_all($pattern, $content, $out, PREG_SET_ORDER); 
+		  $dollar = ""; 
+		  $euro = ""; 
+		  foreach($out as $cur) 
+		  { 
+			if($cur[2] == 840) $dollar = str_replace(",",".",$cur[4]); 
+			if($cur[2] == 978) $euro   = str_replace(",",".",$cur[4]); 
+		  } 
+		//  echo "Доллар - ".$dollar."<br>"; 
+		//  echo "Евро - ".$euro."<br>"; 
+		  function get_content() 
+		  { 
+			// Формируем сегодняшнюю дату 
+			$date = date("d/m/Y"); 
+			// Формируем ссылку 
+			$link = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=$date"; 
+			// Загружаем HTML-страницу 
+			$fd = fopen($link, "r"); 
+			$text=""; 
+			if (!$fd) echo "Запрашиваемая страница ЦБ не найдена"; 
+			else 
+			{ 
+			  // Чтение содержимого файла в переменную $text 
+			  while (!feof ($fd)) $text .= fgets($fd, 4096); 
+			} 
+			// Закрыть открытый файловый дескриптор 
+			fclose ($fd); 
+			return $text; 
+		  } 
+	/////////////////////////////////////////////////////////////
 	
 	function GetBirthday($Minus){
 		$Today = "".date("m.d.y").""; 
@@ -557,6 +488,7 @@
 		
 		
 		
+		
 		// Дополнительные параметры страхования
 		if($_POST["amSport"]){$amSport='true';$amSportChecked='checked';}else{$amSport='false';$amSportChecked='';}
 		//чекбокс отмені поездки
@@ -701,7 +633,11 @@
 		
 		
 		//..................................................................................... 
-		
+	//требования посольства Болгарии
+	if ($otherCountryRaw == 'Bulgaria') $otherCountryRaw = 'All European countries' ;
+	
+	//требование посольства Финляндии
+	if ($shengenCountryRaw == 'Finland') $shengenCountryRaw = 'Schengen' ;
 
 	//сохраним все переменные в сессию
 	$_SESSION['amSport']=$amSport;
@@ -1087,6 +1023,13 @@
 		
 		var_dump($result3);
 		
+		//рассчитаем значение в рублях в зависимости от курса центробанка
+		if ($currency == strtoupper("43B13C6D-EEAF-4F35-A990-4236DCDAB212"))
+			$kurs = $euro;
+		if ($currency == strtoupper("4A1FDB9F-C12F-4B74-8D7D-70B4F0A57898"))
+			$kurs = $dollar;
+		
+		if (isset($Premium)) $Premium_ru = $Premium * $kurs;
 	}
 
 	?>

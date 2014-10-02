@@ -371,7 +371,7 @@
 													<div class="b-form-elem_label b-rooms" style="font-weight:normal;width:100%"> 
 														<span style="width:100px">Количество путешественников: </span>
 														<input type="text" name="PeopleCount" id="PeopleCount" <?if($_POST["PeopleCount"]){echo "value=".$_POST["PeopleCount"];} else {echo 'value="0" style="color:red"';}?> readonly  />
-														<div id='count-error' style="font-size:12px">Количество путешественников не должно быть больше пяти!</div>
+														<div id='count-error' style="font-size:12px">Количество путешественников должно быть не больше пяти!</div>
 													</div>
 													
 												</div>
@@ -431,46 +431,42 @@
 											<div id="AdvOptions" class="for-all for-one b-rooms b-inline" >
 												<?//=$AdvancedParametersHtmlString?>
 												<div name='basParams'>Полис с выбранным покрытием включает в себя:</div>
-													<div id='basParamMed' style='margin-left:100px;'>
-														<input id='inpBasParamMed' name='inpBasParamMed' style='margin-left:10px' type='checkbox' disabled checked />
-														<label for='inpBasParamMed'><b>Медицинские расходы</b></label>
-														<div id='divBasParamMed' style='margin-left:30px;'>(Медицинские расходы, медицинская транспортировка, экстренная стоматология, посмертная репатриация, оплата срочных сообщений)</div>
-													</div>
-													<div id='basParamTrans' class='basParam' 
-															<?foreach($CountriesArrays as $OneCountry)
-																{	if($_POST["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}}
-																GetDisplay( $Country, $_POST["groupOfProgram"], 'basParamTrans','1' );?>
-																>
+													<ul>
+														<div id='basParamMed' style='margin-left:100px;'>
+															<input id='inpBasParamMed' name='inpBasParamMed' style='display:none; margin-left:10px' type='checkbox' disabled checked />
+															<li><label for='inpBasParamMed'><b>Медицинские расходы</b></label></li>
+															<div id='divBasParamMed' style='margin-left:30px;'>(Медицинские расходы, медицинская транспортировка, экстренная стоматология, посмертная репатриация, оплата срочных сообщений)</div>
+														</div>
+														<div id='basParamTrans' class='basParam' 
+																<?foreach($CountriesArrays as $OneCountry)
+																	{	if($_POST["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}}
+																	GetDisplay( $Country, $_POST["groupOfProgram"], 'basParamTrans','1' );?>
+																	>
+																
+															<input id='inpBasParamTrans' name='inpBasParamTrans' style='display:none;margin-left:10px' disabled checked type='checkbox'/>
+															<li><label for='inpBasParamTrans' ><b>Транспортные расходы</b></label></li>
+															<div id='divBasParamTrans' style='margin-left:30px;'>(Эвакуация детей, оставшихся без опеки, проживание и проезд сопровождающего, в случае долгой госпитализации, визит родственника, досрочное возвращение, юридическое сопровождение, помощь при утрате документов, задержка авиарейса)</div>
+														</div>
+														<div id='basParamBag' class='basParam'
+																<?foreach($CountriesArrays as $OneCountry)
+																	{	if($_POST["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}}
+																	GetDisplay( $Country, $_POST["groupOfProgram"], 'basParamBag', '1' );?>
+																> 
 															
-														<input id='inpBasParamTrans' name='inpBasParamTrans' style='margin-left:10px' disabled checked type='checkbox'/>
-														<label for='inpBasParamTrans' ><b>Транспортные расходы</b></label>
-														<div id='divBasParamTrans' style='margin-left:30px;'>(Эвакуация детей, оставшихся без опеки, проживание и проезд сопровождающего, в случае долгой госпитализации, визит родственника, досрочное возвращение, юридическое сопровождение, помощь при утрате документов, задержка авиарейса)</div>
-													</div>
-													<!--<div id='basParamCancel' class='basParam' style='margin-left:100px;'>
-														<input name='inpBasParamCancel' style='margin-left:10px' disabled checked type='checkbox'/>
-														<label for='inpBasParamCancel' ><b>Отмена поездки</b></label>
-														<div id='divBasParamCancel' style='margin-left:30px;' >(Возврат денег за путёвку при отмене поездки, без покрытия по риску «не выдача визы», возврат денег за не использованные дни, при вынужденном прерывании поездки)</div>
-													</div>-->
-													<div id='basParamBag' class='basParam'
-															<?foreach($CountriesArrays as $OneCountry)
-																{	if($_POST["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}}
-																GetDisplay( $Country, $_POST["groupOfProgram"], 'basParamBag', '1' );?>
-															> 
-														
-														<input id='inpBasParamBag' name='inpBasParamBag' style='margin-left:10px' disabled checked type='checkbox'/>
-														<label for='inpBasParamBag' ><b>Багаж</b></label>
-														<div id='divBasParamBag' style='margin-left:30px;' >(Утрата багажа, покупка необходимых вещей при задержке багажа)</div>
-													</div>
-													<div id='basParamCivil' class='basParam' 
-															<?foreach($CountriesArrays as $OneCountry)
-																{	if($_POST["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}}
-																GetDisplay( $Country, $_POST["groupOfProgram"], 'basParamCivil','1' );?>
-																>
-														<input id='inpBasParamCivil' name='inpBasParamCivil' style='margin-left:10px' disabled checked type='checkbox'/>
-														<label for='inpBasParamCivil' ><b>Гражданская ответственность</b></label>
-														<div id='divBasParamCivil' style='margin-left:30px;'>(Расходы на оплату возмещения третьим лицам за причинение вреда их жизни, здоровью, имуществу)</div>
-													</div>
-												
+															<input id='inpBasParamBag' name='inpBasParamBag' style='display:none;margin-left:10px' disabled checked type='checkbox'/>
+															<li><label for='inpBasParamBag' ><b>Багаж</b></label></li>
+															<div id='divBasParamBag' style='margin-left:30px;' >(Утрата багажа, покупка необходимых вещей при задержке багажа)</div>
+														</div>
+														<div id='basParamCivil' class='basParam' 
+																<?foreach($CountriesArrays as $OneCountry)
+																	{	if($_POST["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}}
+																	GetDisplay( $Country, $_POST["groupOfProgram"], 'basParamCivil','1' );?>
+																	>
+															<input id='inpBasParamCivil' name='inpBasParamCivil' style='display:none;margin-left:10px' disabled checked type='checkbox'/>
+															<li><label for='inpBasParamCivil' ><b>Гражданская ответственность</b></label></li>
+															<div id='divBasParamCivil' style='margin-left:30px;'>(Расходы на оплату возмещения третьим лицам за причинение вреда их жизни, здоровью, имуществу)</div>
+														</div>
+													</ul>
 												
 												<div name='advParams'>Дополнительные опции:</div>	
 													<div id='advParamTrans' class='advParam'
@@ -530,12 +526,12 @@
 												<div class="b-button b-button-search button-size-big button-style-marked"  >
 													<!--<input type="submit" name="CalculatePolice" value="Рассчитать полис" title="Рассчитать полис" tabindex="4" >-->
 													
-													<input type="submit" id="CalculatePolice" name="CalculatePolice" value="Рассчитать полис" disabled='disabled' title="Рассчитать полис" tabindex="4" >
+													<input type="submit" id="CalculatePolice" name="CalculatePolice" value="Рассчитать полис" <? if (!$Premium) echo"disabled='disabled'";?> title="Рассчитать полис" tabindex="4" >
 												</div>
 												
 												<div class="CalculatorResult for-one for-all b-rooms" style="font-size:16px; " >
 													<?if($Premium){?>
-													Стоимость полиса: <b><span style="font-size:30px"><?=round($Premium,2)?></span>&nbsp;<?=$currencyRaw?></b>
+													Стоимость полиса: <b><span style="font-size:30px"><?=round($Premium,2)?></span>&nbsp;<?=$currencyRaw?> = <span style="font-size:30px"><?=round($Premium_ru,2)?></span> руб. (по курсу ЦБ за <?=date("d/m/Y")?>)</b>
 													<?}?>
 												</div>
 											</div>
@@ -596,11 +592,11 @@
 					if ( num < 6  )
 						{
 							$('#PeopleCount').val( num	);
-							//$('#count-error').hide();
+							$('#count-error').css('color','black');
 							$('#PeopleCount').css('color','black');
 						}
 					else {
-							//$('#count-error').show();
+							$('#count-error').css('color','red');
 							$('#PeopleCount').val('');
 						}
 					isAllFill();
