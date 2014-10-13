@@ -1,0 +1,570 @@
+/*}
+Content
+{*/
+#content {
+	width: 100%;
+	padding: 1em 0 3em;
+	line-height: 1.4em;
+	position: relative;
+	margin-bottom: 4em;
+	max-width: 1600px;
+}
+#content .reducer {
+	-zoom: 1;
+}
+#content .reducer .reducer {
+	padding: 0;
+	-zoom: none;
+}
+#content .reducer:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+#content .main {
+	position: relative;
+	float: left;
+	width: 76.5%;
+	margin: 0;
+	padding: 0;
+}
+#content .extra {
+	position: relative;
+	margin-top: 0.1em;
+	float: left;
+	clear: right;
+	width: 20.7%;
+	*width: 20%;
+	padding: 0 0 0 2.8%;
+}
+#content .extra .rounded p,
+#content .extra .rounded2 p,
+#content .extra .rounded3 p {
+	margin-top: 0;
+}
+#content .head_img {
+	margin-top: 1em;
+}
+#content .wide {
+	float: none;
+	clear: both;
+	width: 100%;
+	margin: 0;
+	padding: 1px 0 0;
+	position: relative;
+}
+
+#content .wide:after, #content .main:after, #content .extra:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+.comment {
+	color: #777;
+	font-size: 90%;
+}
+
+/*}
+Rounded
+{*/
+.rounded, .rounded1, .rounded2 {
+	margin: 1.2em 0;
+	
+	border: 1px solid #666;
+		
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	
+	zoom: 1;
+}
+.rounded .inner, 
+.rounded1 .inner, 
+.rounded2 .inner {
+	margin: 11px;
+	position:relative;
+	z-index:2;
+}
+.rounded .inner ul li a {
+	position:relative;
+	z-index:4;
+}
+
+.round_t_l, 
+.round_t_r, 
+.round_b_l, 
+.round_b_r {
+	display:none;
+	position:absolute;
+	background: url('bg-rounded.png') top left no-repeat;
+	_line-height: 1px;
+	_font-size: 1px;
+	zoom: 1;
+	z-index:1;
+}
+.round_t_l {
+	top: 0;
+	bottom: 20px;
+	left: 0;
+	right: 20px;
+}
+.round_t_r {
+	top: 0;
+	bottom: 20px;
+	width: 20px;
+	right: 0;
+	background-position:100% 0;
+}
+.round_b_l {
+	height: 20px;
+	bottom: 0;
+	left: 0;
+	right: 20px;
+	background-position:0 100%;
+}
+.round_b_r {
+	height: 20px;
+	bottom: 0;
+	right: 0;
+	width: 20px;
+	background-position:100% 100%;
+}
+.rounded1 .round_t_l, 
+.rounded1 .round_t_r, 
+.rounded1 .round_b_l, 
+.rounded1 .round_b_r {
+	background-image:url('bg-rounded1.png');
+}
+
+.rounded2 .round_t_l, 
+.rounded2 .round_t_r, 
+.rounded2 .round_b_l, 
+.rounded2 .round_b_r {
+	background-image:url('bg-rounded2.png');
+}
+
+.rounded1 {
+	border-color: #0c0;
+}
+.rounded2 {
+	border-color: #c00;
+}
+#content .extra .rounded, 
+#content .extra .rounded1, 
+#content .extra .rounded2 {
+	margin-left: -13px;
+}
+
+/*}
+Button1 (yellow)
+{*/
+.button, .button1, .button2 {
+	cursor: pointer;
+	position: relative;
+	float:left;
+	margin: 1.2em 0;
+}
+.button a,
+.button b {
+	padding: 11px 25px;
+	line-height: 1.5em;
+	display: block;
+	position:relative;
+	color: #000;
+}
+.button a:hover {
+	color: #000 !important;
+}
+.button .button_c,
+.button2 .button_c,
+.button1 .button_c {
+	position: relative;
+	z-index: 1;
+	display: block;
+}
+.button .button_c * {
+	white-space:nowrap;
+}
+.button .button_c, .button .button_c a,
+.button2 .button_c, .button2 .button_c a,
+.button1 .button_c, .button1 .button_c a {
+	text-decoration: none;
+}
+
+.button .button_t_l,
+.button .button_t_r,
+.button .button_b_l,
+.button .button_b_r {
+	overflow: hidden;
+	position: absolute;
+	z-index: 0;
+}
+.button .button_t_l ins,
+.button .button_t_r ins,
+.button .button_b_l ins,
+.button .button_b_r ins {
+	position:absolute;
+	width: 500px;
+	height: 450px;
+	background: transparent url('bg-button.png') 0 0 no-repeat;
+	_behavior: url('/f/1/global/iepngfix.htc');
+}
+
+.button .button_t_l {
+	top: 0px;
+	bottom: 25px;
+	left: 0;
+	right: 25px;
+	_width: 100%;
+	_width: expression((parentNode.offsetWidth - 25) + 'px');
+	_height: expression((parentNode.offsetHeight - 25) + 'px');	
+}
+.button .button_t_l ins {
+	top: -26px;
+	left: -28px;
+}
+.button .button_t_r {
+	top: 0;
+	bottom: 25px;
+	right: 0px;
+	left: auto;
+	width: 25px;
+	_height: expression((parentNode.offsetHeight) - 25 + 'px');	
+}
+.button .button_t_r ins {
+	top: -26px;
+	left: 0;
+}
+.button .button_b_l {
+	left: 0;
+	right: 25px;
+	height: 25px;
+	top: auto;
+	bottom: 0;
+	_width: 100%;
+	_width: expression((parentNode.offsetWidth - 25) + 'px');
+}
+.button .button_b_l ins {
+	top: 0;
+	left: -28px;
+}
+.button .button_b_r {
+	right: 0;
+	height: 25px;
+	bottom: 0;
+	width: 25px;
+}
+.button .button_b_r ins {
+	left: 0;
+}
+.button:hover .button_t_l ins,
+.button:hover .button_t_r ins {
+	top: -137px;
+}
+.button:hover .button_b_l ins,
+.button:hover .button_b_r ins {
+	top: -111px;
+}
+/*}
+Button1 (green) and Button2 (blue)
+{*/
+.button1 a,
+.button1 b,
+.button2 a,
+.button2 b {
+	padding: 11px 20px 13px 18px;
+}
+.button1 .button_t_l,
+.button2 .button_t_l,
+.button1 .button_t_r,
+.button2 .button_t_r {
+	bottom: 21px;
+	_height: expression((parentNode.offsetHeight - 21) + 'px');
+}
+.button1 .button_b_l,
+.button2 .button_b_l,
+.button1 .button_b_r,
+.button2 .button_b_r {
+	height: 21px;
+}
+
+.button1 .button_t_l ins,
+.button1 .button_t_r ins,
+.button1 .button_b_l ins,
+.button1 .button_b_r ins {
+	background: transparent url('bg-button1.png') 0 0 no-repeat;
+}
+.button2 .button_t_l ins,
+.button2 .button_t_r ins,
+.button2 .button_b_l ins,
+.button2 .button_b_r ins {
+	background: transparent url('bg-button2.png') 0 0 no-repeat;
+}
+.button1 .button_b_l ins,
+.button1 .button_b_r ins,
+.button2 .button_b_l ins,
+.button2 .button_b_r ins {
+	top: -6px;
+}
+.button1:hover .button_b_l ins,
+.button1:hover .button_b_r ins,
+.button2:hover .button_b_l ins,
+.button2:hover .button_b_r ins {
+	top: -117px;
+	zoom:1;
+}
+.button.disabled a {
+	cursor: default;
+}
+.button.disabled .button_t_l ins,
+.button.disabled .button_t_r ins {
+	top: -326px;
+}
+.button.disabled .button_b_l ins,
+.button.disabled .button_b_r ins {
+	top: -306px;
+}
+.t_buttons td {
+	text-align: center;
+}
+.t_buttons .button,
+.t_buttons .button1 {
+	display: inline-block;
+	float: none;
+}
+
+/*}
+Picture
+{*/
+.picture
+{
+display: table;
+zoom: 1;
+}
+.picture:after, .picture_p:after
+{
+content: '';
+display: block;
+clear: both;
+}
+.picture .picture_p, .picture .picture_c
+{
+display: table-cell;
+*display: inline-block;
+vertical-align: middle;
+*float: left;
+*clear: right;
+}
+
+.picture .picture_p
+{
+padding: 0.5em 1em 0 0;
+}
+.picture_p img
+{
+border:none;
+}
+
+/*}
+Get insurance block
+{*/
+.get-insurance
+{
+	height: 96px;
+	padding-top: 0.3em;
+}
+.get-insurance img {
+	position:absolute;
+	right: -15px;
+	top: 0;
+}
+.get-insurance p 
+{
+	margin: 1em 0;
+}
+.get-insurance a 
+{
+	font-size: 1.2em;
+}
+
+/*}
+	SWITCHER
+{*/
+.switcher {
+	clear: both;
+	margin-left: -8px;
+	zoom: 1;
+	color: #fff;
+}
+.switcher:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+.switcher p {
+	margin: 0 -10px 1em;
+	height:32px;
+	padding: 11px 21px 0;
+	float: left;
+}
+.switcher p.selected
+{
+	padding-left: 21px;
+	padding-right:21px;
+	position:relative;
+	background: #fff url('bg-selector.png') left -44px repeat-x;
+	margin: 0 3px;
+}
+.switcher p.selected .left, 
+.switcher p.selected .right {
+	width: 21px;
+	height:44px;
+	background-color: #fff;
+	background-image: url('bg-selector.png');
+	background-repeat: no-repeat;
+	display:block;
+	position:absolute;
+	top: 0;
+	z-index: 1;
+}
+.switcher p.selected .left { 
+	background-position: left top;
+	left: 0;
+}
+.switcher p.selected .right {
+	right: 0;
+	background-position: -21px top;
+}
+.switcher p.selected a {
+	color: #fff;
+	text-decoration:none;
+}
+.switcher p.selected a:hover {
+	color: #fff !important;
+	cursor: default;
+}
+.switcher p.selected a,
+.switcher p.selected .pseudo_link,
+.switcher p.selected b {
+	position:relative;
+	z-index:1;
+	border: none;
+	color: #fff;
+}
+
+/*}
+	ICONS
+{*/
+.PDF i {
+	width: 24px;
+	height: 35px;
+	display: inline-block;
+	background: url('icons.png') -95px -38px no-repeat;
+	margin: 0 .5em -.9em 0;
+	_display:block;
+	_margin: -.6em .5em 0 0;
+	_float: left;
+}
+
+.pipka {
+	font-size: 0.4em;
+	vertical-align: middle;
+	color: #666;
+	cursor:pointer;
+	*display: inline-block; 
+	*margin-top: 0.2em; 
+	*vertical-align: top;
+}
+
+/* ----------------------------------------- */
+/*                 rounded                   */
+/* ----------------------------------------- */
+/* Скругленные углы */
+.backgrounded {
+	position: relative;
+	background: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.backgrounded .lt,
+.backgrounded .rt,
+.backgrounded .lb,
+.backgrounded .rb {
+	display:none;
+	position:absolute;
+	background-image: url('programs-rounded-bg.png');
+	background-repeat: no-repeat;
+	z-index: 0;
+}
+.backgrounded .lt {
+	top: 0;
+	height: 20px;
+	left: 0;
+	right: 20px;
+	background-position: left top;	
+}
+.backgrounded .rt {
+	top: 0;
+	height: 20px;
+	right: 0;
+	width: 20px;
+	background-position: right top;	
+}
+.backgrounded .lb {
+	height: 20px;
+	bottom: 0;
+	left: 0;
+	right: 20px;
+	background-position: left bottom;	
+}
+.backgrounded .rb {
+	height: 20px;
+	bottom: 0;
+	width: 20px;
+	right: 0;
+	background-position: right bottom;	
+}
+.backgrounded .lm,
+.backgrounded .rm {
+	display:none;
+	position:absolute;
+	background-image: url('programs-rounded-bg-middle.png');
+	background-repeat: repeat-y;
+	top: 20px;
+	bottom: 20px;
+	z-index: 0;
+}
+.backgrounded .lm {
+	left: 0;
+	right: 20px;
+	background-position:left top;
+}
+.backgrounded .rm {
+	width: 20px;
+	right: 0;
+	background-position:right top;
+}
+.backgrounded .inner {
+	padding: 0 !important;
+	margin: 0;
+	position:relative;
+	z-index: 1;
+}
+
+h4.expanded  {
+	margin-bottom: 0;
+}
+.expander {
+	margin-bottom: 3em;
+	overflow: hidden;
+}
+
+/*
+ * Promo banner
+ */
+.promo {
+    padding: 10px 0 30px 0;
+    text-align: left;
+}
+

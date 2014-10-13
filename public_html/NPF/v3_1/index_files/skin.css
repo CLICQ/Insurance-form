@@ -1,0 +1,392 @@
+﻿/*
+    RSB WLS Skin Styles
+    Decorated elements, buttons, fonts, links, background colors etc.
+*/
+body, input, textarea {
+    font-family: Arial, Geneva, Helvetica, Sans-serif;
+}
+html, body {
+    background: #EFF0E6;
+}
+a, a:hover,
+.b-pseudolink, .b-pseudolink:hover {
+    color: #4179AB; 
+}
+a:hover {
+    text-decoration: none;
+}
+
+/* footer styles */
+.b-page-footer_inner {
+    border-top: 1px dashed #333;
+    padding-top: 15px;
+}
+.b-copyright_title {
+    font-size: 14px;
+}
+.b-copyright_notes {
+    font-size: 10px;
+    line-height: 120%;
+}
+.b-page-footer a, 
+.b-page-footer a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* hsr styles */
+.b-top-search,
+.b-hsr-top-panels,
+.b-search-controls-top {
+    border: dashed 1px #000;
+    background: #FFF;
+    box-shadow: none;
+}
+.b-hsr-inner {
+    background: #FFF;
+}
+.b-hsr-header {
+    background: transparent;
+    border: none;
+}
+.b-search-controls-top {
+    border: none;
+}
+.b-hsr-filters {
+    border-bottom: none;
+}
+.b-hsr-hotel {
+    background: #FFFFFF;
+    border: 1px dashed #000000;
+    box-shadow: none;
+}
+.b-hsr-hotel:hover {
+    /*box-shadow: 0 0 15px rgba(0,0,0, 0.5);*/
+}
+.row-style-odd {
+    background: #fff;
+}
+.row-style-even {
+    background: #EFF0E6;
+}
+.row-style-hovered, 
+.rooms tr.hover td {
+    background: #FFFEEE !important;
+}
+
+/* availability */
+.b-availability_header {
+    background: #E0EEDC;
+    color: #4D980F;
+    font-weight: bold;
+    border: none;
+    padding: 8px 10px;
+}
+
+
+/* Buttons */
+.b-button {
+    /*background-image: none;*/
+}
+.button-style-marked, 
+.button-style-normal {
+    background-image: none;
+    border-radius: 20px;
+    border-color: none;
+    box-shadow: none;
+    color: #fff;
+    border: solid 1px #228500;
+    
+    /* copied from http://www.colorzilla.com/gradient-editor/ */
+    background: #45d500; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzQ1ZDUwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk1JSIgc3RvcC1jb2xvcj0iIzM0YTEwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,  #45d500 5%, #34a100 95%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#45d500), color-stop(95%,#34a100)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #45d500 5%,#34a100 95%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #45d500 5%,#34a100 95%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #45d500 5%,#34a100 95%); /* IE10+ */
+    background: linear-gradient(to bottom,  #45d500 5%,#34a100 95%); /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45d500', endColorstr='#34a100',GradientType=0 ); /* IE6-8 */
+}
+.button-style-marked:hover,
+.button-style-marked:active,
+.button-style-normal:hover,
+.button-style-normal:active {
+    box-shadow: none;
+    border: solid 1px #228500;
+
+    /* copied from http://www.colorzilla.com/gradient-editor/ */
+    background: #45d500; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzQ1ZDUwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzdjZjYwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk1JSIgc3RvcC1jb2xvcj0iIzM0YTEwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,  #45d500 5%, #7cf600 50%, #34a100 95%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#45d500), color-stop(50%,#7cf600), color-stop(95%,#34a100)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #45d500 5%,#7cf600 50%,#34a100 95%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #45d500 5%,#7cf600 50%,#34a100 95%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #45d500 5%,#7cf600 50%,#34a100 95%); /* IE10+ */
+    background: linear-gradient(to bottom,  #45d500 5%,#7cf600 50%,#34a100 95%); /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45d500', endColorstr='#34a100',GradientType=0 ); /* IE6-8 */
+}
+.b-button a:hover,
+.b-button-select a:hover {
+	color: #fff;
+}
+.button-style-link {
+    color: #4179AB;
+    font-size: 16px;
+}
+.button-style-link a,
+.button-style-link input,
+.button-style-link a:hover {
+    color: #4179AB;
+    text-decoration: underline;
+}
+
+/* segmented buttons */
+.b-buttons-segmented .b-button,
+.b-buttons-segmented .b-button:hover {
+    border-color: #ccc;
+}
+.b-buttons-segmented .b-button.pressed, 
+.b-buttons-segmented .b-button.pressed:hover {
+    background: #34a100;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35) inset;
+    color: #FFFFFF;
+    cursor: default;
+    text-shadow: none;
+}
+
+
+/* pager */
+.b-pager_link {
+    background: #fff;
+    border-color: #ccc;
+}
+.pager-item-current {
+    background: #34a100;
+    border-color: #34a100 #34a100 #34a100;
+}
+
+
+
+/* form elements */
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+textarea {
+    border-color: #999;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: normal;
+}
+.b-form-search-main .b-form-elem_label,
+.b-form-hotel-availability .b-form-elem_label {
+    color: #000;
+    font-size: 16px; 
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.elem-style-marked .b-form-elem_control,
+.elem-style-normal .b-form-elem_control,
+.elem-style-normal:hover .b-form-elem_control {
+    background-color: #fff;
+    border-color: #acacac;
+    border-radius: 2px;
+    box-shadow: none;
+}
+.elem-style-marked input, 
+.elem-style-marked select {
+    color: #333;
+}
+.selector {
+    background-image: none;
+}
+.elem-style-marked .selector {
+    border-color: #acacac;
+    border-radius: 2px;
+    box-shadow: none;
+}
+.elem-style-marked .selector span {
+    background-image: url("images/select-drop-down-icon.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: #333;
+}
+.b-elem-calendar {
+    background-image: url("images/ico-calendar.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+
+/* misc */
+.b-amenities-list_item {
+    border-color: #9dcc76;
+}
+.b-top-search .b-page-title {
+    color: #000;
+    text-shadow: none;
+}
+
+
+/* hotel page */
+.b-hotel-frame,
+.b-hotel-frame-bottom {
+    background: transparent;
+}
+.b-hotel-main-info-wrapper {
+    padding-top: 0;
+}
+
+/* availability block at hotel page */
+.hotelAvailability {
+    background: #fff;
+    border: 1px dashed #000;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+
+/* breadcrumbs */
+.b-breadcrumbs_item {
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, Serif;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+    height: 28px;
+    line-height: 24px;
+    margin: 0 10px 0 0;
+    padding: 0 30px 0 25px;
+}
+.b-breadcrumbs_item:last-child {
+    padding-right: 30px;
+}
+.breadcrumbs-item-current {
+    background-color: #9E1B32;
+    background-image: url("images/breadcrumbs-item-active.gif") !important;
+    background-position: right top;
+    border-left: 1px solid #9E1B32;
+}
+.breadcrumbs-item-current,
+.breadcrumbs-item-current a {
+    color: #FFF !important;
+    text-decoration: none;
+}
+.breadcrumbs-item-completed,
+.breadcrumbs-item-disabled {
+    background-image: url("images/breadcrumbs-item-normal.gif") !important;
+    background-position: right top;
+    border-left: 1px solid #aba495;
+    color: #663;
+}
+.breadcrumbs-item-completed, 
+.breadcrumbs-item-completed a {
+    color: #999;
+}
+
+/* price decoration */
+.b-price,
+.b-price-old,
+.b-price_currency {
+    color: #FFA64D;
+}
+
+
+/* wait message */
+.b-wait {
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    box-shadow: 0 0 15px rgba(0,0,0, 0.5);
+}
+.b-wait-message {
+    padding-bottom: 30px;
+    background-image: url('images/loader-progress-bar.gif');
+    color: #333;
+}
+.b-hsr-availability .b-wait-message {
+    padding-left: 30px;
+    background-image: url('images/loader-progress-bar-small.gif');
+}
+
+/* checkout */
+.b-payment-icons:before {
+    display: block;
+    content: "К оплате принимаются только карты, выпущенные Банком Русский Стандарт";
+    font-size: 11px;
+    margin: 2px 5px 5px 3px;
+}
+.b-payment-icons {
+    padding: 10px 5px;
+    background: #f3f4f6;
+    border: solid 1px #e0e0e0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.b-payment-icon {
+    height: 43px;
+    margin: 0 5px 0 0;
+    background-image: url("images/payment-icons.png");
+}
+.ico-mastercard {
+    width: 55px;
+    background-position: -95px 0;
+}
+.ico-maestro {
+    width: 55px;
+    background-position: -150px 0;
+}
+.ico-visa {
+    width: 95px;
+    background-position: 0 0;
+}
+.ico-amex {
+    width: 38px;
+    background-position: -205px 0;
+}
+.ico-dc {
+    width: 119px;
+    background-position: -243px 0;
+}
+.b-payment-icon.ico-discover {
+	width: 48px;
+	background: url("images/logo_discover.png") no-repeat;
+}
+.virtu-card  {
+	overflow: hidden;
+	margin: 50px 0 20px;
+}
+.virtu-card .card-ico {
+	background: url("images/virtu_card.png") no-repeat;
+	width: 162px;
+	height: 102px;
+}
+.virtu-card div {
+	float: left;
+}
+.virtu-card .checkout {
+	background: url("images/button_checkout.png");
+	width: 126px;
+	height: 37px;
+	display: inline-block;
+}
+.virtu-card .card-ico {
+	width: 210px;
+}
+.virtu-card .card-text {
+	width: 455px;
+	font-size: 13px;
+	padding-top: 20px;
+}
+.virtu-card .card-link {
+	width: 150px;
+	text-align: right;
+	padding-top: 35px;
+}

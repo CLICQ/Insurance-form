@@ -1,0 +1,25 @@
+.radio-item
+{
+	width: 100px;
+	color: white;
+	font-size: 14px;
+}
+.for-one{
+	display:none;	
+}
+.for-all{
+	display:none;
+}
+.font-16
+{
+	font-size:16px;
+}
+.form-elem_label{
+	font-size:14px;	
+}
+
+.ui-datepicker-trigger
+{
+	margin-left:-25px;
+	
+}

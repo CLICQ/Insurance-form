@@ -1,0 +1,541 @@
+/*}
+Common HTML elements
+{*/
+img {
+	margin: 0;
+	border-width: 0;
+	padding: 0;
+}
+ins {
+	text-decoration: none;
+}
+label[disabled="true"] {
+	opacity: 0.4;
+}
+sup, sub {
+	position: relative;
+	top: -0.5em;
+	line-height: 0;
+	vertical-align: baseline;
+}
+sub {
+	top: 0.1em;
+}
+b {
+	font-weight: normal;
+}
+
+p, ul, ol, .data, .comment, .rounded, .rounded1, rounded2 {
+	margin: 1.2em 0;
+	padding: 0;
+}
+hr {
+	line-height: 0;
+	font-size: 0;
+	height: 0;
+	background: none;
+	border: none;
+	
+	border-top: 1px dotted #666;
+	margin: 1.4em 0;
+	*margin: 0;	
+	clear: both;
+}
+br {
+	height: 0;
+	line-height:0;
+	padding: 0;
+	margin: 0;
+}
+
+.rur {
+	font-family: 'RurArial';
+}
+
+/*}
+Headers
+{*/
+h1, h2, h3 {
+	font-family: Georgia, Times, serif;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2em;
+}
+h2 {
+	font-size: 160%;
+	margin-bottom: -0.4em;
+	margin-top: 1em;
+}
+h3 {
+	font-size: 200%;
+	padding: 1em 0 0;
+	margin: 0 0 -0.55em;
+}
+h4 {
+	font-weight: normal;
+	font-size: 150%;
+	padding: 1em 0 0;
+	margin: 0 0 -0.7em;
+	line-height: 1.2em;
+}
+h5 {
+	margin-bottom: -1.3em;
+}
+h6 {
+	margin-bottom: -1.6em;
+}
+
+/*}
+Lists
+{*/
+li ul, li ol {
+	margin-top: 0.5em;
+}
+ul {
+	list-style-type: none;
+	//list-style-image: url('li.gif');
+}
+li {
+	margin: 0.5em 0 0.6em 1.3em;
+}
+ul li {
+	padding: 0;
+	behavior: expression(
+		( !this.before && parentNode && parentNode.tagName == 'UL' )
+		?
+			( this.before = true )
+			& ( parentNode.style.listStyleImage = 'none' )
+			& (
+				( this.firstChild && this.firstChild.firstChild )
+				?
+					( this.firstChild.style.marginTop = '-1.2em' )
+					& ( this.firstChild.style.position = 'relative' )
+				: ''
+			)
+			& ( eNOBR = document.createElement( '<nobr class="list-style" />' ) )
+			& ( eNOBR.innerHTML = '&mdash;&nbsp;' )
+			& ( this.insertBefore( eNOBR, this.firstChild ) )
+		: ''
+	);
+}
+nobr.list-style {
+	position: relative; 
+	display: block; 
+	width: 1.25em; 
+	left: -1.25em; 
+	margin: 0 -1.25em -1.5em 0;
+}
+ol li {
+	margin-left:2.3em;
+}
+ul>li:before {
+	content: '\2014\a0';
+	float: left;
+	margin-left: -1.25em;
+}
+ul>li>* {
+	text-indent: 0;
+}
+ul.navigation, .navigation ul {
+	list-style-image: none;
+}
+.navigation li {
+	behavior: none;
+	margin: 0.5em 0 0;
+}
+.navigation nobr.list-style {
+	display:none;	
+}
+.navigation li li {
+	margin-left: 1em;
+}
+.navigation li:before {
+	content: '';
+	content: none;
+	float: none;
+	margin-left: 0;
+}
+.before_list {
+	margin-bottom: -0.6em;
+}
+
+/*}
+Links
+{*/
+a:link, a:visited {
+	text-decoration: underline;
+}
+.pseudo_link {
+	border-bottom: 1px dotted;
+}
+a:link *, a:visited *, .pseudo_link {
+	cursor: pointer;
+	cursor: hand;
+}
+span.disabled {
+	border: none;
+	color: #000;
+	cursor: default;
+}
+a:link, .pseudo_link, .navigation a:link, a:visited {
+	color: #0062be;
+}
+a:hover, .pseudo_link:hover {
+	color: #c00000 ! important;
+}
+a * {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+a:focus {
+	outline:none;
+}
+
+/*}
+Misc
+{*/
+.n
+{
+white-space: nowrap;
+word-spacing: -0.13em;
+}
+
+/*}
+Tables
+{*/
+table, td, th
+{
+border-spacing: 0;
+border: none;
+//border-collapse: collapse;
+}
+th, td
+{
+padding: 0.5em 0.75em;
+vertical-align: top;
+text-align: left;
+}
+.b_t {border-top: 1px solid #CCC! important;}
+.b_r {border-right: 1px solid #CCC! important;}
+.b_b {border-bottom: 1px solid #CCC! important;}
+.b_l {border-left: 1px solid #CCC! important;}
+.a_m {vertical-align: middle;}
+.a_b {vertical-align: bottom;}
+.a_c {text-align: center;}
+.a_r {text-align: right;}
+
+
+/*}
+Data tables
+{*/
+table.data td, table.data th
+{
+padding: 0.7em 1em 0.3em;
+}
+table.data th
+{
+font-weight: bold;
+padding: 0.8em 1em 0.4em;
+}
+
+
+/*}
+Columns
+{*/
+.columns
+{
+width: 100%;
+display: table;
+margin: 0.25em 0 0 0;
+position: relative;
+}
+.column
+{
+display: table-cell;
+position: relative;
+padding: 0;
+-float: left;
+-clear: right;
+}
+
+
+.column6_1, .column6_2, .column6_3, .column6_4, .column6_5, .column6_6
+{
+width: 17%;
+padding: 0 2em 0 0;
+}
+.column6_6
+{
+width: 15%;
+padding-right: 0;
+}
+
+.column5_1, .column5_2, .column5_3, .column5_4, .column5_5
+{
+width: 20%;
+padding: 0 2em;
+}
+.column5_12, .column5_23, .column5_34, .column5_45
+{
+width: 40%;
+}
+.column5_123, .column5_234, .column5_345
+{
+width: 60%;
+}
+.column5_1234, .column5_2345
+{
+width: 80%;
+}
+
+.column4_1, .column4_2, .column4_3, .column4_4
+{
+width: 25%;
+padding: 0 2em;
+}
+.column4_123, .column4_234
+{
+width: 75%;
+}
+
+.column3_1, .column3_2, .column3_3, .column3_12, .column3_23
+{
+width: 33%;
+padding: 0 2em;
+}
+.column3_12, .column3_23
+{
+width: 67%;
+}
+.column3_2
+{
+width: 34%;
+}
+
+.column2_1, .column2_2,
+.column4_12, .column4_23, .column4_34
+{
+width: 50%;
+padding: 0 2em;
+}
+
+.column2_1,
+.column3_1,
+.column4_1, .column4_12, .column4_123,
+.column5_1, .column5_12, .column5_123, .column5_1234
+{
+padding-left: 0;
+}
+
+.column2_2,
+.column3_23,   .column3_3,
+.column4_234,  .column4_34,  .column4_4,
+.column5_2345, .column5_345, .column5_45, .column5_5
+{
+padding:0 0 0 2em;
+}
+
+
+/*}
+Text
+{*/
+.smaller 
+{
+	font-size: 0.9em;
+}
+
+.hidden, .not_display {
+	display: none;
+}
+
+
+/*}
+POPUP
+{*/
+.moved {
+	left: -10000px !important;
+}
+#fade {
+	background: #000;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 15;
+	opacity: 0;
+	filter: alpha(opacity = 50);
+}
+
+.popup_box,
+#popup {
+	color: #000;
+	left: -45%;
+	margin: 0 0 0 50%;
+	min-width: 900px;
+	overflow: hidden;
+	padding: 55px 0 58px 0;
+	top: 75px;
+	visibility: visible;
+	width: 90%;
+	z-index: 50;
+	position: fixed;
+	_position:absolute;
+	opacity: 0;
+}
+.popup_box
+{
+min-width: 0;
+z-index: 14;
+padding: 40px 0 58px 0;
+position: fixed;
+}
+
+#popup .phone span {
+	font-size: 380%;
+	line-height:1.2em;
+	white-space: nowrap;
+}
+
+.popup_box .content,
+#popup .content {
+	background: #fff;
+	margin: 0 24px;
+	padding: 0 5% 2em 3%;
+	position: relative;
+	z-index: 2;
+	zoom: 1;
+}
+.popup_box .content
+{
+margin: 0 48px;
+padding: 0;
+}
+
+
+.zf-repeat-buttons .close,
+.popup_box .close,
+#popup .close {
+	background-position: 0 -100px;
+	cursor: pointer;
+	height: 37px;
+	width: 37px;
+	top: 25px;
+	right: 34px;
+	z-index: 3;
+	position: absolute;
+}
+
+#popup .close:hover,
+#popup .close.hover {
+	background-position: 0 -140px;
+}
+
+.fieldset .zf-repeat-buttons .close,
+.popup_box .close
+{
+background-position: -40px -100px;
+height: 20px;
+width: 20px;
+}
+
+.zf-repeat-buttons .close:hover,
+.popup_box .close:hover
+{
+background-position: -40px -120px;
+}
+
+.popup_box .corner,
+#popup .corner {
+	background: url("popup.png") no-repeat;
+}
+
+.popup_box .corner.lt, .popup_box .corner.lb,
+#popup .corner.lt, #popup .corner.lb {
+	height: 113px;
+	left: -55px;
+	margin: -58px 0 0;
+	width: 100%;
+}
+
+.popup_box .rt, .popup_box .rb,
+#popup .rt, #popup .rb {
+	clip: rect(0 2007px 10000px 1952px);
+	height: 113px;
+	left: -2007px;
+	margin-top: -58px;
+	width: 2007px;
+}
+
+.popup_box .corner.lb, .popup_box .rb,
+#popup .corner.lb, #popup .rb {
+	margin-top: 0;
+}
+
+.popup_box .shadow,
+#popup .shadow {
+	background: url("popup.png");
+	clip: rect(113px 10000px 10000px 0);
+	top: -58px;
+	position: absolute;
+	height: 100%;
+	width: 2062px;
+	z-index: 1;
+}
+.popup_box .shadow.left,
+#popup .shadow.left {
+	left: -2007px;
+}
+.popup_box .shadow.right,
+#popup .shadow.right {
+	left: -55px;
+	margin-left: 100%;
+}
+
+.zf-repeat-buttons .close,
+#popup .icon,
+.popup_box .icon {
+    background: url("icons.png") no-repeat scroll 0 -100px transparent;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+}
+.popup_box .icon {
+	background-position: -40px -100px;
+}
+
+/*}
+	CORNERS
+{*/
+.corner {
+	position: absolute;
+	overflow: hidden;
+	height: 100px;
+	width: 50px;
+}
+.corner.lt, .corner.lb {left: 0;}
+.corner.rt, .corner.rb {margin-left: 100%;}
+.corner.lt, .corner.rt {top: 0;}
+
+/*}
+	TEXT-SHADOW
+{*/
+.shadowed {
+	position:relative;
+	zoom: 1;	
+}
+.shadowed .text-shadow
+{
+	filter: progid:DXImageTransform.Microsoft.Glow(Color=#000000,Strength=1.0)
+	progid:DXImageTransform.Microsoft.Alpha(opacity=25)
+	progid:DXImageTransform.Microsoft.Blur(pixelradius=1.75, enabled='true');
+	-ms-filter: "progid:DXImageTransform.Microsoft.Glow(Color=#000000,Strength=1.0)"
+	"progid:DXImageTransform.Microsoft.Alpha(opacity=25)"
+	"progid:DXImageTransform.Microsoft.Blur(pixelradius=1.75, enabled='true')";
+	color: #111111;
+	top: -2px;
+	left: -2px;
+	position:absolute;
+	zoom: 1;
+	z-index: -1;
+}

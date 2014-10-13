@@ -1,0 +1,212 @@
+.calBtn {
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.purpleCell {
+	background-color: #9b8fb9;
+	color: #ffffff;
+	font-family: sans-serif;
+}
+
+.whiteCell {
+	background-color: #ffffff;
+	color: #000000;
+	font-family: sans-serif;
+	padding: 2px 3px;
+}
+
+#candarLeer td.whiteCell, #candarLeer td.overCell {
+	cursor: pointer;
+}
+
+#candarLeer td {
+	padding: 1px 3px;
+}
+
+.sundayCell {
+	background-color: #ffffff;
+	color: #8f0016;
+	cursor: pointer;
+	font-family: sans-serif;
+	padding: 2px 3px;
+}
+
+#candarLeer .overCell {
+	border-color: red;
+	background-color: #ffffff;
+	color: #cc0000;
+}
+
+.blackCell {
+	background-color: #8f0016;
+	color: #ffffff;
+	padding: 1px 3px;
+}
+
+#candarLeer {
+	background: #fff;
+	border: 1px solid #b3b3b3;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	
+	z-index: 10000000;
+	margin-top: 1.8em;
+	margin-left: -11px;
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+#candarLeer .current {
+	margin: 0;
+	padding: 0 0.5em;
+	position: relative;
+}
+#candarLeer .current p {
+	margin: 0;
+}
+
+#candarLeer .current_date {
+	text-align: center;
+}
+
+#candarLeer .current .control {
+	position: absolute;
+}
+#candarLeer .current .control.prev {
+	left: 0;
+}
+#candarLeer .current .control.next {
+	right: 0;
+}
+
+#candarLeer table {
+	border-collapse: separate;
+	margin-bottom: 1em;
+}
+
+#candarLeer table td, #candarLeer table th {
+	border: 1px solid #fff;
+	text-align: right;
+}
+
+#candarLeer table th {
+	font-weight: normal;
+	cursor: auto !important;
+}
+
+#candarLeer .content {
+	padding: 1em 1.6em 1em 1em;
+}
+
+#candarLeer .b-icon__close {
+	right: 7px;
+	top: 7px;
+	cursor: pointer;
+}
+
+#candarLeer .grid {
+	padding: 1em 0 0;
+	font-size: 110%;
+}
+
+#candarLeer .current select {
+	margin: 0 1em 0 0;
+}
+
+
+#candarLeer .border {
+	background: #fff;
+	height: 11px;
+	margin: 0 11px;
+	position: relative;
+}
+#candarLeer .border.top {
+	border-top: 2px solid #e3e3e3;
+	margin-top: -13px;
+}
+
+#candarLeer .border.bottom {
+	border-bottom: 2px solid #e3e3e3;
+	margin-bottom: -13px;
+}
+
+#candarLeer .corner {
+	width: 26px;
+}
+
+
+#candarLeer .corner.lt {
+	clip: rect(20px 13px 33px 0);
+	left: -13px;
+	top: -22px;
+}
+#candarLeer .corner.rt {
+	clip: rect(20px 26px 33px 13px);
+	left: -13px;
+	top: -22px;
+}
+#candarLeer .corner.lb {
+	clip: rect(33px 13px 46px 0);
+	left: -13px;
+	top: -33px;
+}
+#candarLeer .corner.rb {
+	clip: rect(33px 26px 46px 13px);
+	left: -13px;
+	top: -33px;
+}
+
+
+
+
+
+
+.b-icon {
+position: absolute;
+display: block;
+overflow: hidden;
+background: url(icon_24.png) no-repeat;
+}
+
+.b-icon__close {
+width: 17px;
+height: 17px;
+background-position: -40px 0px;
+margin-left: -20px;
+}
+
+
+.date_start_rounder {
+border: 1px solid #cfcfcf;
+background: #f4f4f4;
+background: -moz-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+background: -webkit-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+background: -o-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+background: -ms-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+display: inline-block;
+border-radius: 4px;
+padding: 5px 40px 5px 10px;
+cursor: pointer;
+}
+
+.date_start_rounder ins.calendar {
+background: url("calendar_ico.png") 0 0 no-repeat;
+height: 10px;
+margin: 0.3em 0 0 7px;
+position: absolute;
+width: 23px;
+}
+
+
+
+.trip_start_wrapper .unit{
+	padding-left: 0;
+}
+
+
+.trip_start_wrapper  .valid_message {
+margin-top: 33px
+}

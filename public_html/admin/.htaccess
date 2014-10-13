@@ -1,0 +1,6 @@
+AuthUserFile /home/g/guriev/guriev.bget.ru/public_html/admin/users
+AuthType basic
+AuthName "Enter login and password!"
+Require valid-user
+
+

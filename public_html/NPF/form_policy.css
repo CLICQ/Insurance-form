@@ -1,0 +1,471 @@
+#description{
+	padding-left: 0;
+}
+#description div,
+#content .extra .incut div {
+	display:none;
+}
+#content .extra .incut {
+	display:none;
+}
+#content .extra .incut p {
+	line-height: 1.5em;
+	font-size: 0.9em;F
+}
+h1 {
+	font-size:2.5em;
+	margin-bottom: 0;
+}
+
+.reducer_h1 h1 em {
+	font-size:65%;
+}
+.main .reducer_h1 {
+	background: #a6ce39;
+	padding: 20px 42px 5px 42px;
+}
+form {
+	background: #fbfbfb;
+}
+form .fieldset {
+	width: auto;
+	line-height: 1.4em;
+}
+form .fieldset hr {
+	margin-bottom: 16px;
+	margin-left: -42px;
+	margin-right: -42px;
+}
+form .fieldset .fieldset {
+	padding-left: 0;
+	padding-right: 0;
+}
+form div.submit {
+	z-index: 1;
+	padding-left: 15em;
+}
+
+.highlight .field .example {
+  clear:both;
+}
+.highlight div {
+	padding-left: 12em;
+}
+.highlight div.valid_message {
+	padding-left: 1em;
+}
+.highlight .type_radio div {
+	padding-left: 0;
+}
+.highlight a {
+	font-size: 1.2em;
+}
+.highlight {
+	background: #e4f5b3;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+.fieldset h1 {
+	background: none;
+	padding-left: 0;
+	padding-bottom: 0;
+}
+.nolegend {
+	padding-top: 2em;
+}
+.highlight_shadow {
+	height: 23px;
+	overflow:hidden;
+	position: relative;
+}
+.highlight_shadow img { 
+	width:100%;
+    position: absolute;
+    left: 0; 
+	bottom: 0; 
+    z-index: 0;
+}
+.row .selector {
+	height: 1.2em;
+	padding: 0;
+}
+.for_selector.composite {
+	margin-bottom: 0;
+}
+.zf-disabled {
+	display: none;
+}
+
+#passport {
+	margin-bottom: 1.3em;
+	font-size: 1em;
+}
+#passport .legend {
+	font-size:1em;
+	font-family: Arial, sans-serif;
+	width: 10em;
+	position: absolute;
+}
+#passport .reducer {
+	margin-left:12em;
+	_margin-left: 6em;
+}
+#passport .reducer .row {
+	font-size:1.4em;
+}
+#passport .label {
+	display: none;
+}
+#passport .reducer .text {
+	font-size:0.8em;
+	padding: 5px 3px 3px;
+	margin-right: 0.7em;
+	margin-bottom: 0.1em;
+}
+#passport .label, #passport .field {
+	padding: 0;
+}
+#passport .example, .field .example {
+	font-style: italic;
+	color: #999;
+}
+#passport .example {
+	font-size: 0.7em;
+	clear: left;
+	padding:0.3em 0.2em 0;
+	position:relative;
+	z-index: 0;
+}
+form #passport .field .valid_message {
+	margin: 0;
+	top: 2.1em;
+	position:absolute;
+	z-index: 1;
+}
+#passport .row:first-child .example {
+	zoom: 1;
+}
+form #passport .field .valid_message .arr {
+	background-position: -504px right;
+	height: 15px;
+	width: 25px;
+	left: 0.6em;
+	top: -14px;
+}
+form .agree {
+	position: relative;
+	z-index: 1;
+}
+.form_shadow {
+	position: relative;
+	height: 175px;
+	margin-bottom: -8em;
+	top: -8em;
+	z-index: 0;
+}
+.form_shadow .l {
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.form_shadow .c {
+	position:absolute;
+	z-index: 1;
+	right: 242px;
+	left: 28px;
+}
+.form_shadow .c img {
+	width: 100%;
+}
+.form_shadow .r {
+	position:absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+}
+
+form textarea {
+	height: 10em;
+}
+
+.zip .text {
+	width: 4em;
+}
+
+#second_step h1 {
+	background: none;
+	text-indent: 0;
+	padding: 0;
+	margin-top: -0.3em;
+	margin-bottom: .7em;
+	_position:relative;
+}
+#second_step h2 {
+	font-size: 2.2em;
+}
+#second_step .comment {
+	font-size:1em;
+}
+#second_step .legend {
+	color:#000;
+	margin-bottom: 0.5em;
+}
+#second_step .highlight {
+	padding-top: 1em;
+	padding-bottom: 1.5em;
+}
+#second_step .comment {
+	margin: 0.8em 0 1.2em;
+}
+#second_step p {
+	margin: 0.4em 0;
+}
+#second_step .highlight p {
+	margin: 1.2em 0;
+}
+#second_step .total {
+	margin-top: 1em;
+}
+#second_step .total h1 {
+	margin-bottom: 0.3em;
+	margin-top: 0.5em;
+}
+#content .button2 {
+	z-index: 4;
+	margin-right: 1em;
+	_margin-bottom: 100%;
+	cursor: pointer;
+}
+#content .button2 a {
+	padding: 7px 20px 10px;
+	color: #fff;
+	font-size: 1.4em;
+}
+#content .button2 a:hover {
+	color: #fff !important;
+}
+#content .disabled .button2 {
+	cursor: default !important;
+}
+#second_step .away_button {
+	float: right;
+}
+#second_step .away_button div {
+	clear: both;
+	color: #666;
+	font-size: 0.8em;
+	margin: -1em 0 0 2.4em;
+}
+#second_step .button2 {
+	margin-bottom: 0.3em;
+	
+	position:relative;
+	zoom: 1;
+}
+#second_step .button2 a {
+	cursor: pointer;
+}
+#second_step .controls .pseudo_link {
+	margin: 2em 0 0 -1.3em;
+	display:block;
+	float:left;
+}
+#second_step .highlight .legend {
+	padding-top: .5em;
+}
+#second_step .highlight h2 {
+	padding-top: 0;
+	margin-bottom: 0.5em;
+	margin-top: 0.2em;
+}
+#second_step .highlight p {
+	font-size: 1em;
+	line-height: 1.4em;
+}
+#second_step .total hr {
+	margin: 2em 0 1.5em;
+}
+#second_step .total h1 {
+	margin-bottom: 0.5em;
+	font-family: Arial, sans-serif;
+}
+#second_step .total p {
+	font-size: .9em;
+	line-height: 1.4em; 
+}
+.unit {
+	float: none;
+	margin: 0;
+}
+.payment select {
+	margin-right: 0.3em;
+}
+.payment .type_radio .zf-selected {
+	float:left;
+	width: auto;
+	margin-right: 0.5em;
+	margin-top: 0.1em;
+}
+.payment .type_radio .unit {
+	margin-top: 0.5em;
+}
+.payment .type_radio .zf-selected input {
+	display:none; 
+}
+.payment .type_radio .zf-selected label { 
+	margin-left: 0;
+}
+.label, #passport .legend {
+	padding-top: 0.5em;
+}
+
+form .info {
+	position: relative;
+	z-index:3;
+	padding-top: 1.8em;
+	font-size: 0.9em;
+	padding-right: 25%;
+	padding-left: 9em;
+}
+form .button {
+	
+}
+
+a.disabled,
+a.disabled * {
+	cursor: default;
+	color: #000;
+	text-decoration: none;
+}
+
+.note {
+	font-style: italic;
+	margin:;
+}
+.note .red {
+	font-style: normal;
+	color: red;
+}
+.note p {
+	margin: 1.5em 0 0.3em 0;
+}
+
+#layout .extra .comment {
+	font-size: 0.9em;
+}
+
+#second_step .pay-policy { 
+	margin-bottom: 2em;
+}
+
+input.text {
+	position:relative;
+	z-index: 0;
+}
+
+#step2 .controls {
+	-zoom: 1;
+}
+#step2 .controls .away_button{
+	zoom: 1;
+	overflow: hidden;
+}
+#step2 .highlight {
+	width: auto;
+}
+
+
+
+.xdisabled.zf-disabled{
+	display: block;
+}
+
+
+.xdisabled .zf-disabled{
+	display: inline;
+}
+
+.tag {
+	position:absolute;
+	left:100%;
+	margin-left: -22px;
+	top: .7em;
+	z-index: 1;
+	min-height: 68px;
+	min-width: 227px;
+}
+.tag .tl,
+.tag .tr,
+.tag .bl,
+.tag .br {
+	position:absolute;
+	background-image: url('program-tag.png');
+	background-repeat: no-repeat;
+}
+.tag .tl {
+	height: 17px;
+	width: 79px;
+	background-position: left top;
+	left: 0;
+	top: 0;
+}
+.tag .tr {
+	height: 17px;
+	left: 79px;
+	right: 0;
+	background-position: right top;
+}
+.tag .bl {
+	bottom: 0;
+	left: 0;
+	top: 17px;
+	width: 79px;
+	background-position:left bottom;
+}
+.tag .br {
+	bottom: 0;
+	top: 17px;
+	left: 79px;
+	right: 0;
+	background-position: right bottom;
+}
+#content .tag .reducer {
+	padding: 0;
+	margin: 15px 35px 30px 106px;
+	font-size: 1.7em;
+	text-shadow: #39670b 0 1px 1px;
+	color: #fff;
+	font-weight: bold;
+	position:relative;
+	z-index:2;
+}
+
+
+
+.extra_help {
+	position: relative;
+	margin-top: 0.1em;
+	float: right;
+	clear: right;
+	padding: 0;
+	width: 28%;
+}
+
+.extra_help .picture_p {
+	width: 110px;
+	text-align: right;
+}
+
+#content .main {
+	width: 68%;
+}
+
+/*
+ * Promo banner
+ */
+.promo {
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+

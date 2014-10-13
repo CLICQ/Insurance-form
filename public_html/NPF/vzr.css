@@ -1,0 +1,497 @@
+
+.step_application {
+	display: none;
+}
+
+.step_application_show .step_application {
+	display: block;
+}
+
+.row.type_checkbox {
+	margin-bottom: 2em;
+}
+
+
+.type_date.zf-disabled, .type_date .zf-disabled {
+	display: block;
+}
+
+.type_date .zf-disabled {
+	display: inline;
+}
+
+#calc_result {
+	padding: 2em 0;
+	border-top: 1px dashed #c6c6c6;
+	clear: left;
+	margin: 1em 0 10em 2em;
+}
+
+#calc_result .price {
+	font-size: 3em;
+	display: inline-block;
+	margin-left: 13px;
+}
+
+#calc_result .button1 {
+	margin-left: 12em;
+}
+
+.step_application_show #calc_result .button1,
+.step_application_show .calc_btn {
+	display: none;
+}
+
+#program_view {
+	
+}
+
+#program_view .label {display: none;}
+
+#program_view .field {padding-left: 0;}
+
+#program_view  .selector {height: auto;}
+
+#program_view input {
+	top: 17px;
+	left: 15px;
+}
+
+.payment #program_view   input {display: block;}
+.payment #program_view   label {margin: 0 0 0 18px;}
+
+#program_view h4, #program_view p {margin: 0px; padding: 0px;}
+
+#program_view  .selector {
+	margin-bottom: 20px;
+	clear: left;
+	width: 100%;
+	float: left;
+	padding: 10px 20px;
+	border: 1px dashed #e4f5b3;
+	border-radius: 7px;
+}
+
+#program_view  .selector.zf-selected {
+	/*border: 1px dashed #c2d293;*/
+	position: relative;
+}
+
+#program_view  .selector label {
+	position: static;
+}
+
+
+
+
+.selector > li:before {
+  content: none;
+  float: none;
+  margin-left: 0;
+}
+
+.selector li {
+  padding: 0;
+  float:left;
+}
+
+.selector {
+  margin: 0;
+}
+
+
+
+.inline_radio_switcher {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+
+
+.inline_radio_switcher::after , .inline_radio_switcher_field .field::after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+.inline_radio_switcher .item,
+.inline_radio_switcher_field .selector {
+	border-top: 1px solid #cfcfcf;
+	border-bottom: 1px solid #cfcfcf;
+	border-left: 1px solid #cfcfcf;
+	background: #f4f4f4;
+	background: -moz-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #f4f4f4 100%);
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.inline_radio_switcher_field .selector {
+width: auto;
+}
+
+.inline_radio_switcher_field .selector input {
+	left: -20000px;
+}
+
+.inline_radio_switcher .item.first_child,
+.inline_radio_switcher_field .selector.first_child,
+.inline_radio_switcher_field .selector:first-child {
+	border-radius: 4px 0 0 4px;
+}
+
+.inline_radio_switcher .item.last_child,
+.inline_radio_switcher_field  .selector.last_child,
+.inline_radio_switcher_field  .selector:nth-last-of-type(1) {
+	border-right: 1px solid #cfcfcf;
+	border-radius: 0 4px 4px 0;
+}
+
+.inline_radio_switcher .item.last_child.first_child,
+.inline_radio_switcher_field  .selector.last_child.first_child {
+	border-right: 1px solid #cfcfcf;
+	border-radius: 4px;
+}
+
+.inline_radio_switcher_field   .selector.zf-disabled {
+	display: none;
+}
+
+.inline_radio_switcher_field .selector label {
+	margin-left: 0;
+}
+
+.inline_radio_switcher .item.selected,
+.inline_radio_switcher_field .selector.zf-selected{
+	background: #676767;
+	color: #fff;
+	border-color: #363636;
+	background: -moz-radial-gradient(bottom, ellipse cover, #676767 0%, #5a5a5a 50%, #363636 100%);
+	background: -webkit-radial-gradient(bottom, ellipse cover, #676767 0%, #5a5a5a 50%, #363636 100%);
+	background: -o-radial-gradient(bottom, ellipse cover, #676767 0%, #5a5a5a 50%, #363636 100%);
+	background: -ms-radial-gradient(bottom, ellipse cover, #676767 0%, #5a5a5a 50%, #363636 100%);
+	cursor: default;
+}
+
+.inline_radio_switcher_field   .zf-selected.first_child.last_child {
+	background: none;
+	color: #000;
+	border: none;
+}
+
+
+.unit {
+	padding-left: 15px;
+	display: inline-block;
+	min-width: 5em;
+}
+
+.zf-buttonremove.zf-disabled {
+	display: none;
+}
+
+.zf-repeat-buttons .zf-buttonremove {
+	position: absolute;
+	left: 35em;
+	top: 5px;
+	z-index: 1000;
+}
+
+.zf-repeat-buttons .zf-buttonadd {
+	cursor: pointer;
+	color: #979797;
+	border: 1px dashed #d5d5d5;
+	padding: 5px 11px;
+	border-radius: 5px;
+	font-size: 0.89em;
+}
+
+.insured .zf-buttonremove {
+	left: 30em;
+}
+	
+	
+	
+#content .button1 a,
+#content .button a:hover {
+	cursor: pointer;
+	padding: 7px 20px 10px;
+	color: #fff!important;
+	font-size: 1.4em;
+}
+
+#calc_result {
+	display: none;
+}
+
+#results_top {
+	padding-left: 0;
+	display: none;
+}
+
+#results_top td {
+	width: width: 200px;
+}
+
+#result_sum {
+	font-weight: bold;
+}
+
+.show_2step {
+	display: none;
+}
+
+.step_application_show .step1,
+.step_application_show .zf-buttonadd,
+.step_application_show .zf-buttonremove,
+.step_application_show  #calc_result {
+	display: none!important;
+}
+
+.step_application_show  #results_top ,
+.step_application_show  .show_2step{
+	display: block;
+}
+.step_application_show #program_view ,
+.step_application_show .person_birthday  input,
+.step_application_show .person_birthday  select{
+	position: absolute;
+	left: -100000px;
+}
+
+.submit.step_application {
+	margin-bottom: 3em;
+}
+
+form div.submit {
+	margin-top: 3em;
+	margin-bottom: 2em;
+}
+
+#info_finland,
+#info_shengen,
+p.error {
+	margin: 0 0 3em 0;
+	color: lightcoral;
+	display: none;
+}
+
+#calc_result p.error {
+	display: block;
+}
+
+.zf-focused .zf-combolist {
+#	display: block;
+	position: absolute;
+}
+
+
+.step1 .fieldset  {
+	position: relative;
+}
+
+.zf-fieldset .zf-buttonadd {
+	display: none;
+}
+
+.zf-fieldset.last  .zf-buttonadd,
+.zf-fieldset .last  .zf-buttonadd {
+	display: inline-block;
+}
+
+
+
+.agree .file i, 
+.info .file i,
+.info .pseudo_link .file nobr {
+display:none;
+}
+
+.info .pseudo_link .file a {
+text-decoration:none;
+position:relative;
+z-index:-1;
+}
+
+.info .pseudo_link:hover a {
+color:#c00000;
+}
+
+.agree .file nobr {
+color:#999;
+font-size:0.9em;
+}
+
+
+form .info {
+position: relative;
+z-index: 3;
+padding-top: 1.8em;
+font-size: 0.9em;
+padding-right: 25%;
+padding-left: 17em;
+}
+
+
+.info {
+	margin: 20px 40px 20px 0px;
+}
+
+
+.country_container  .country  {
+	background-image: url(./arr_down.png);
+	background-position: 270px 9px;
+	background-repeat: no-repeat;
+}
+
+.country_container  dd.field,
+.country_container  dd.field input ,
+.country_container  dd.field select {
+width: 280px;
+}
+
+dd.field input {
+	margin-left: 0px;
+}
+
+
+.trip_end {
+font-style: italic;
+margin-left: 15px;
+color: #979797;
+font-size: 0.89em;
+}
+
+
+.fieldset  .zf-repeat-buttons .close {
+background: url("./x.png") no-repeat scroll 0 0px transparent;
+}
+
+.trip_start_wrapper  {
+	z-index: 0;
+}
+
+input.text {
+	position: static;
+}
+
+.type_combobox .field {
+position: relative;
+z-index: inherit;
+}
+
+
+.megadesc {
+position: absolute;
+right: -26em;
+width: 24em;
+top: 0;
+display: none;
+}
+
+.zf-selected .megadesc {
+display: block;
+}
+
+
+.selector .megadesc li {
+float: none;
+}
+
+.red {
+	display: block;
+	/*color: rgb(243,112,34);*/
+	font-style: italic;
+	font-weight: bold;
+}
+
+form {
+	overflow: visible;
+}
+
+
+.highlight  .selector.zf-selected:after {
+content: "";
+position: absolute;
+bottom: -15px;
+left: 50px;
+border-width: 15px 15px 0;
+border-style: solid;
+border-color: #e4f5b3 transparent;
+display: block;
+width: 0;
+top: 16px;
+right: -20px;
+bottom: auto;
+left: auto;
+border-width: 25px 0 25px 20px;
+border-color: transparent #e4f5b3;
+}
+
+
+.country_helper {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(/f/1/ex/form/hint.png) no-repeat;
+	vertical-align: middle;
+	margin: 0px 0px 0px 10px;
+	position: absolute;
+	top: 0;
+	right: -30px;
+}
+
+.country_helper .country_list {
+position: absolute;
+left: 40px;
+width: 20em;
+-webkit-column-count: 3;
+background: white;
+box-shadow: 1px 1px 15px 13px rgba(0,0,0,0.1);
+padding: 20px;
+border-radius: 5px;
+z-index: 100;
+display: none;
+position: relative;
+top: -20px;
+}
+
+.country_helper:hover .country_list  {
+	display: block;
+}
+
+.country_helper:hover .country_list:after {
+content: "";
+position: absolute;
+bottom: -15px;
+left: 50px;
+border-width: 15px 15px 0;
+border-style: solid;
+border-color: #f3961c transparent;
+display: block;
+width: 0;
+
+top: 16px;
+left: -20px;
+bottom: auto;
+border-width: 10px 25px 10px 0;
+border-color: transparent #fff;
+}
+
+
+#trip_period_one_year {
+	display: none;
+}
+
+
+
+.zf-combolist-active .zf-combolist {
+	top: 28px;
+	left: 163px;
+	display: block;
+	position: absolute;
+	z-index: 1000000000000;
+}

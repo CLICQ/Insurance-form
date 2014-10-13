@@ -1,0 +1,70 @@
+/*}
+Header 
+{*/
+#header {
+	background: #600 url('header_bg.png');
+	color: #fff;
+	text-align: left;
+}
+#header .reducer {
+	background: url('header.png') repeat-y;
+	min-height: 118px;
+	-height: 118px;
+	zoom: 1;
+	overflow: hidden;
+}
+#header .reducer:after {
+	content: '';
+	display: block;
+	clear: left;
+}
+
+#header a:hover, #header .pseudo_link:hover, #header .hover {
+	color: #C00000 !important;
+}
+
+#header .logo {
+	position:absolute;
+	top: 25px;
+	left: 20px;
+}
+#header .logo img {
+	_behavior: url('/f/1/global/iepngfix.htc');
+}
+#header .info {
+	float: right;
+	margin-left: 450px;
+	-margin-left: 0;
+}
+#header .hotline, #header .contacts {
+	text-align: left;
+	margin: 14px .5em 0 3em;
+	vertical-align: top;
+	float: left;
+}
+#header .contacts {
+	margin-bottom: 2em;
+}
+#header .hotline .phone_wrap, #header .contacts .phone_wrap {
+	margin: -0.9em 0 0.4em;
+} 
+#header .hotline .phone_wrap .pseudo_link {
+	color: #fff;
+	border-bottom: 1px dotted;
+}
+#header .hotline .comment {
+	margin: 0.4em 0 0;
+	color: #fff;
+	_position:absolute;
+	_margin-top: 0.2em;
+}
+#header .contacts {
+
+}
+
+/*}
+Phone
+{*/
+#header .phone {
+	font-size:1.3em;
+}
