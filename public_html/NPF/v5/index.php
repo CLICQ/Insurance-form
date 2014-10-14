@@ -483,7 +483,20 @@
 												
 												<div id='CalculatorResult' class=" for-one for-all b-rooms" style="font-size:16px; " >
 													<?if($Premium){?>
-													Стоимость полиса: <b><span style="font-size:26px"><?=round($Premium,2)?></span>&nbsp;<?=$currencyRaw?> = <span style="font-size:26px"><?=round($Premium_ru,2)?></span> руб. (курс ЦБ за <?=date("d.m.Y")?>)</b>
+													Стоимость полиса: <b><span style="font-size:26px"><?=round($Premium,2)?></span>&nbsp;<?//=$currencyRaw 
+                                                                                                            if('ЕВРО' == $currencyRaw){
+                                                                                                                echo "EURO";
+                                                                                                                }
+                                                                                                            else if( 'ДОЛЛАР США' == $currencyRaw){
+                                                                                                            echo "USD";
+                                                                                                            }                                                                                                             
+                                                                                                            else{
+                                                                                                            echo "<p style='color:red'>Ошибка валюты. Обновите пожалуйста страницу.</br> В случае повторения обратитесь к администратору.</p>";
+                                                                                                            }
+                                                                                                            
+                                                                                                         
+                                                                                                            
+                                                                                                            ?> = <span style="font-size:26px"><?=round($Premium_ru,2)?></span> руб. (курс ЦБ за <?=date("d.m.Y")?>)</b>
 													<?}?>
 													<?if ($Errors){?>
 														<span class='warning'>Ошибка в Вирту! <?=$Errors?></span>
