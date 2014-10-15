@@ -457,7 +457,10 @@
 																	GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamBag' ,'1');?> 
 																	>
 															<div id = 'divInpAdvParamBag' <? if ($_SESSION['divInpAdvParamBag']) echo $_SESSION['divInpAdvParamBag'];?> >
-																<input id='inpAdvParamBag' name='inpAdvParamBag' class='inpAdvParam' type='checkbox' <?if ($_SESSION['drawInpAdvParamBag']){ echo $_SESSION['drawInpAdvParamBag'];}?>   <? if($_SESSION["inpAdvParamBag"] == 1) {echo 'checked ';} else{echo '';} foreach($_SESSION['CountriesArrays'] as $OneCountry)
+																<input id='inpAdvParamBag' name='inpAdvParamBag' class='inpAdvParam' type='checkbox' value ="bagag"  <?if ($_SESSION['drawInpAdvParamBag']) echo $_SESSION['drawInpAdvParamBag'];?>   <? 
+                                                                                                                                  if($_POST && in_array('bmw', $_POST['inpAdvParamBag']) )
+                                                                                                                                  {  echo 'checked';  }
+                                                                                                                                foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																	{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamBag' ,'0');?> style='margin-left:10px' onclick="clickParam(this)" />
 															</div>
 															<li class='li-none'>
