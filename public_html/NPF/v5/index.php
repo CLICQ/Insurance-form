@@ -352,7 +352,20 @@
 																	if ($isShengen == 'true') $tmpCur = '1'; //euro 
 																	foreach($CurrencyArrays as $Key => $OneCurrency){
 																	?>
-																	<option <?if( $tmpCur == $Key){echo "selected";}?> value="<?=$Key?>" <?if ($isShengen == 'true' && $Key == '0') echo "style='display:none'";  ?> ><?=$OneCurrency[2]?></option>
+																	<option <?if( $tmpCur == $Key){echo "selected";}?> value="<?=$Key?>" <?if ($isShengen == 'true' && $Key == '0') echo "style='display:none'";  ?> ><?
+                                                                                                                                           // $OneCurrency[2]
+                                                                                                                                                if('ЕВРО' == $OneCurrency[2]){
+                                                                                                                                                echo "EURO";
+                                                                                                                                                }
+                                                                                                                                            else if( 'ДОЛЛАР США' == $OneCurrency[2]){
+                                                                                                                                            echo "USD";
+                                                                                                                                            }                                                                                                             
+                                                                                                                                            else{
+                                                                                                                                            echo "<p style='color:red'>Ошибка валюты. Обновите пожалуйста страницу.</br> В случае повторения обратитесь к администратору.</p>";
+                                                                                                                                            }
+                                                                                                 
+                                                                                                                        
+                                                                                                                                                        ?></option>
 																<?}?>
 															
 													</select>
@@ -493,9 +506,7 @@
                                                                                                             else{
                                                                                                             echo "<p style='color:red'>Ошибка валюты. Обновите пожалуйста страницу.</br> В случае повторения обратитесь к администратору.</p>";
                                                                                                             }
-                                                                                                            
-                                                                                                         
-                                                                                                            
+                                                                                                 
                                                                                                             ?> = <span style="font-size:26px"><?=round($Premium_ru,2)?></span> руб. (курс ЦБ за <?=date("d.m.Y")?>)</b>
 													<?}?>
 													<?if ($Errors){?>
