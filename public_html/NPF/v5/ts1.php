@@ -8,8 +8,12 @@ header($string);
 		// Посылка SOAP-запроса c получением результат
                 print_r($client->__getFunctions());
                 exit;
-		$result = $client->getStock("TXLife_Type");
-		echo "Текущий запас на складе: ", $result;
+		$result1 = $client->Ping();
+                $result2 = $client->TXLife();
+                $result3 = $client->TXLifeTransmittal();
+		echo  $result1;
+                echo  $result2;
+                echo  $result3;
 	} catch (SoapFault $exception) {
 		echo $exception->getMessage();	
 	}
