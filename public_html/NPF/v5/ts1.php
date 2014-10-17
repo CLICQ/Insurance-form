@@ -7,10 +7,10 @@ header($string);
 		
 		// Посылка SOAP-запроса c получением результат
                print_r($client->__getFunctions());
-               
-		$result1 = $client->Ping("CL_FAMILY");
-                $result2 = $client->TXLife("Request1");
-                $result3 = $client->TXLifeTransmittal("CL_FAMILY");
+              // print_r($client->__getTypes('</br>'));
+		//$result1 = $client->Ping("CL_FAMILY");
+               // $result2 = $client->TXLife("Request1");
+               // $result3 = $client->TXLifeTransmittal("CL_FAMILY");
 
                 echo  $result3;
 	} catch (SoapFault $exception) {
