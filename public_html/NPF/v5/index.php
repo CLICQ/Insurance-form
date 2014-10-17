@@ -443,7 +443,12 @@
 																	>
 																	
 															<div id = 'divInpAdvParamCancel' <?if ($_SESSION['divInpAdvParamCancel']) echo $_SESSION['divInpAdvParamCancel'];?> >
-																<input id='inpAdvParamCancel' name='inpAdvParamCancel' class='inpAdvParam' type='checkbox' <?if ($_SESSION['drawInpAdvParamCancel']) echo $_SESSION['drawInpAdvParamCancel'];?>  <? if($_SESSION["inpAdvParamCancel"]) {echo ' checked ';} foreach($_SESSION['CountriesArrays'] as $OneCountry)
+																<input id='inpAdvParamCancel' name='inpAdvParamCancel' class='inpAdvParam' type='checkbox' <?if ($_SESSION['drawInpAdvParamCancel']) echo $_SESSION['drawInpAdvParamCancel'];?>  <?
+                                                                                                                                         if($_SESSION["InsuredSum"] == 30000){echo 'checked';}
+                                                                                                                                            else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
+                                                                                                                                                else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
+                                                                                                                                           else { echo ' ';}
+                                                                                                                                        foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																	{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamCancel','0' );?> style='margin-left:10px' onclick="clickParam(this)" />
 															</div>
 															<li class='li-none'>
