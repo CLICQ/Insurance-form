@@ -7,14 +7,13 @@ header($string);
 		
 		// Посылка SOAP-запроса c получением результат
                print_r($client->__getFunctions());
-                exit;
-		$result1 = $client->Ping("ConfirmationID");
-                $result2 = $client->TXLife();
-                $result3 = $client->TXLifeTransmittal();
+               
+		$result1 = $client->Ping("s-mule-test");
+                $result2 = $client->TXLife("2");
+                $result3 = $client->TXLifeTransmittal("2");
 		echo  $result1;
                 echo  $result2;
                 echo  $result3;
 	} catch (SoapFault $exception) {
 		echo $exception->getMessage();	
 	}
-?>
