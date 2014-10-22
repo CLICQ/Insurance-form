@@ -1,4 +1,9 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
+	session_start(); 
+	include "constants.php";
+        include "";
+
 class Acknowledgement_Type {
   public $MessageId; // UUIDIdentifier_Type
   public $TraceId; // anyURI
@@ -5659,7 +5664,7 @@ class Arrangement_Type {
   public $QualifiedDistInd; // OLI_LU_BOOLEAN
   public $SurrenderChargeAmt; // decimal
   public $TotalAmt; // decimal
-  public $PlanName; // string
+  public $PlanName = 'Anna'; // string
   public $TimingBasis; // OLI_LU_STMTBASIS
   public $AdministrativeTransaction; // OLI_LU_TRANS_TYPE_CODES
   public $MaxDisbursementAmt; // decimal

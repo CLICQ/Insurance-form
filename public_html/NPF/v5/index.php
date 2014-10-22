@@ -424,7 +424,11 @@
 																
 															<div id = 'divInpAdvParamTrans' <?if ($_SESSION['divInpAdvParamTrans']) echo $_SESSION['divInpAdvParamTrans'];?> >
 																<input type='checkbox' id='inpAdvParamTrans' name='inpAdvParamTrans' class='inpAdvParam' 
-																					<? if($_SESSION["inpAdvParamTrans"]) {echo 'checked ';} 
+                                                                                                                                                                            <? if($_SESSION["InsuredSum"] == 15000){echo '';}
+                                                                                                                                                                             else if ($_SESSION["InsuredSum"] == 30000){echo 'checked ';}
+                                                                                                                                                                             else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
+                                                                                                                                                                             else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
+                                                                                                                                                                             else { echo ' ';}
 																						foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																							{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} 
 																						GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamTrans','0' ); ?> 	 onclick="clickParam(this)"/>
@@ -444,10 +448,10 @@
 																	
 															<div id = 'divInpAdvParamCancel' <?if ($_SESSION['divInpAdvParamCancel']) echo $_SESSION['divInpAdvParamCancel'];?> >
 																<input id='inpAdvParamCancel' name='inpAdvParamCancel' class='inpAdvParam' type='checkbox' <?if ($_SESSION['drawInpAdvParamCancel']) echo $_SESSION['drawInpAdvParamCancel'];?>  <?
-                                                                                                                                         if($_SESSION["InsuredSum"] == 30000){echo 'checked';}
-                                                                                                                                            else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
-                                                                                                                                                else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
-                                                                                                                                           else { echo ' ';}
+                                                                                                                                         if($_SESSION["InsuredSum"] == 30000){echo '';}
+                                                                                                                                         else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
+                                                                                                                                         else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
+                                                                                                                                         else { echo ' ';}
                                                                                                                                         foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																	{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamCancel','0' );?> style='margin-left:10px' onclick="clickParam(this)" />
 															</div>
@@ -463,14 +467,10 @@
 																	>
 															<div id = 'divInpAdvParamBag' <? if ($_SESSION['divInpAdvParamBag']) echo $_SESSION['divInpAdvParamBag'];?> >
 																<input id='inpAdvParamBag' name="inpAdvParamBag" class='inpAdvParam' type='checkbox' value="bmw" <?if ($_SESSION['drawInpAdvParamBag']) echo $_SESSION['drawInpAdvParamBag'];?> 
-                                                                                                                               <? if($_SESSION["InsuredSum"] == 30000){echo 'checked';}
+                                                                                                                               <? if($_SESSION["InsuredSum"] == 30000){echo '';}
                                                                                                                                else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
                                                                                                                                 else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
-                                                                                                                                else { echo ' ';}
-                                                                                                                                    
-                                                                                                                                    
-                                                                                                                               
-                                                                                                                               
+                                                                                                                                else { echo ' ';}                                                                                                        
                                                                                                                                foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																	{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamBag' ,'0');?> style='margin-left:10px' onclick="clickParam(this)" />
 															</div>
@@ -485,7 +485,13 @@
 																	GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamCivil','1' );?> 
 																>
 																	
-															<input id='inpAdvParamCivil' name='inpAdvParamCivil' class='inpAdvParam' style='display:none;' type='checkbox' <? if($_SESSION["inpAdvParamCivil"]) {echo 'checked ';} foreach($_SESSION['CountriesArrays'] as $OneCountry)
+															<input id='inpAdvParamCivil' name='inpAdvParamCivil' class='inpAdvParam' style='display:none;' type='checkbox' <? if($_SESSION["inpAdvParamCivil"]) 
+                                                                                                                        if($_SESSION["InsuredSum"] == 30000){echo '';}
+                                                                                                                        else if($_SESSION["InsuredSum"] == 15000){echo '';}
+                                                                                                                        else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
+                                                                                                                        else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
+                                                                                                                        else { echo ' ';}
+                                                                                                                        foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																	{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamCivil','0' );?> style='margin-left:10px' onclick="clickParam(this)" />
 															<li class='li-none'>
 																<label for='inpAdvParamCivil' ><b>Гражданская ответственность</b></label>
