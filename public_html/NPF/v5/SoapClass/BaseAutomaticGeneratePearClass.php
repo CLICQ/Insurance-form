@@ -1122,7 +1122,7 @@ class OLI_LU_CRIMETYPE_TC {
 }
 
 class OLI_LU_CURRENCYTYPE {
-  public $_; // string
+  public $CurrencuTupeCode = 'RUR'; // string
   public $tc; // OLI_LU_CURRENCYTYPE_TC
 }
 
@@ -1847,11 +1847,25 @@ class OLI_LU_HOLDSTAT {
 }
 
 class OLI_LU_HOLDSTAT_TC {
+      /*
+     * Class vyzova zchetchika trans type
+     */
+    public $tcout = 2;
+    function __construct(){
+        return $this->tcount;
+    }
 }
 
 class OLI_LU_HOLDTYPE {
-  public $_; // string
-  public $tc; // OLI_LU_HOLDTYPE_TC
+    /*
+     * Pri vuzove zavazan na drugoj class
+     */
+  public $HoldingTypeCode = 'Policy'; // string
+    function __construct(){
+        $tc = new OLI_LU_HOLDSTAT_TC();
+        return $tc;
+        // теперь $tc->tcount будет содержать 2
+    }
 }
 
 class OLI_LU_HOLDTYPE_TC {
@@ -4346,11 +4360,21 @@ class OLI_LU_TRACKINGTYPE_TC {
 }
 
 class OLI_LU_TRANS_TYPE_CODES {
-  public $_; // string
+  /*
+   *  Nazvanie tranzakcii zadavaemoj staticheskoj 
+   */
+  public $TransType = 'New Buisness Submission Transaction' ; // string
   public $tc; // OLI_LU_TRANS_TYPE_CODES_TC
 }
 
 class OLI_LU_TRANS_TYPE_CODES_TC {
+    /*
+     * Class vyzova zchetchika trans type
+     */
+    public $tcout = 103;
+    function __construct(){
+        return $this->tcount;
+    }
 }
 
 class OLI_LU_TRAVELENV {
@@ -9502,7 +9526,7 @@ class Holding_Type {
   public $HoldingKey; // PERSISTKEY
   public $HoldingSysKey; // SYSKEY
   public $AccountDesignation; // OLI_LU_ACCTDES
-  public $HoldingTypeCode = 'Policy'; // OLI_LU_HOLDTYPE
+  public $HoldingTypeCode; // OLI_LU_HOLDTYPE
   public $HoldingName; // string
   public $HoldingStatus; // OLI_LU_HOLDSTAT
   public $Purpose; // OLI_LU_HOLDPURPOSE
@@ -9547,6 +9571,9 @@ class Holding_Type {
   public $OLifEExtension; // OLifEExtension_Type
   public $id; // ID
   public $DataRep; // DATAREP_TYPES
+  function __constuct(){
+      $this->HoldingTypeCode;
+  }
 }
 
 class HoldingXLat_Type {
@@ -14429,7 +14456,7 @@ class SitusInfo_Type {
 class SourceInfo_Type {
   public $CreationDate; // date
   public $CreationTime; // time
-  public $SourceInfoName = 'SourceInfoName'; // string
+  public $SourceInfoName = 'trevelRSB '; // string
   public $SourceInfoDescription; // string
   public $SourceInfoComment; // string
   public $FileControlID; // string
