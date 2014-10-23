@@ -5060,7 +5060,7 @@ class AdminTransactionProduct_Type {
   public $TransEndAvailableDate; // date
   public $IssueEffectiveDate; // date
   public $IssueExpirationDate; // date
-  public $TransType; // OLI_LU_TRANS_TYPE_CODES
+  public $TransType = 'New Business Submission Transaction'; // OLI_LU_TRANS_TYPE_CODES
   public $QualifiedPlanEntity; // QualifiedPlanEntity_Type
   public $PolicyStatusCC; // PolicyStatusCC_Type
   public $OLifEExtension; // OLifEExtension_Type
@@ -9502,7 +9502,7 @@ class Holding_Type {
   public $HoldingKey; // PERSISTKEY
   public $HoldingSysKey; // SYSKEY
   public $AccountDesignation; // OLI_LU_ACCTDES
-  public $HoldingTypeCode; // OLI_LU_HOLDTYPE
+  public $HoldingTypeCode = 'Policy'; // OLI_LU_HOLDTYPE
   public $HoldingName; // string
   public $HoldingStatus; // OLI_LU_HOLDSTAT
   public $Purpose; // OLI_LU_HOLDPURPOSE
@@ -14429,7 +14429,7 @@ class SitusInfo_Type {
 class SourceInfo_Type {
   public $CreationDate; // date
   public $CreationTime; // time
-  public $SourceInfoName; // string
+  public $SourceInfoName = 'SourceInfoName'; // string
   public $SourceInfoDescription; // string
   public $SourceInfoComment; // string
   public $FileControlID; // string
