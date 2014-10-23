@@ -326,7 +326,7 @@
 															<div id='divInsuredSum2' class="b-inline" <?foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																						{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} 
 																							isVisibleSum($Country,'InsuredSum2');?>>
-																<input type="radio" id="InsuredSum2" name="InsuredSum" class="InsuredSum" value="30000"  <?if($_SESSION["InsuredSum"]=='30000'){echo "checked ";}?>  onclick="ShowUniqueOptions()"/>
+																<input type="radio" id="InsuredSum2" name="InsuredSum" class="InsuredSum" value="30000"  <?if($_SESSION["InsuredSum"]=='30000'){echo "checked ";}else if($Country == "Россия"){echo "/r ";}?>  onclick="ShowUniqueOptions()"/>
 																<label id="labelInsuredSum2" style="vertical-align:middle;" for="InsuredSum2" class="radio-item" >30000</label>
 															</div>
 															<div id='divInsuredSum3' class="b-inline" <? foreach($_SESSION['CountriesArrays'] as $OneCountry)
@@ -425,6 +425,7 @@
 															<div id = 'divInpAdvParamTrans' <?if ($_SESSION['divInpAdvParamTrans']) echo $_SESSION['divInpAdvParamTrans'];?> >
 																<input type='checkbox' id='inpAdvParamTrans' name='inpAdvParamTrans' class='inpAdvParam' 
                                                                                                                                                                             <? if($_SESSION["InsuredSum"] == 15000){echo '';}
+                                                                                                                                                                            else if ($_SESSION["InsuredSum"] == 30000 ){echo 'checked ';}
                                                                                                                                                                              else if ($_SESSION["InsuredSum"] == 30000){echo 'checked ';}
                                                                                                                                                                              else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
                                                                                                                                                                              else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
@@ -486,11 +487,8 @@
 																>
 																	
 															<input id='inpAdvParamCivil' name='inpAdvParamCivil' class='inpAdvParam' style='display:none;' type='checkbox' <? if($_SESSION["inpAdvParamCivil"]) 
-                                                                                                                        if($_SESSION["InsuredSum"] == 30000){echo '';}
-                                                                                                                        else if($_SESSION["InsuredSum"] == 15000){echo '';}
-                                                                                                                        else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
-                                                                                                                        else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
-                                                                                                                        else { echo ' ';}
+                                                                                                                        if($_SESSION["InsuredSum"] and $Country == "Россия"){echo '';}
+                                                                                                                        
                                                                                                                         foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																	{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamCivil','0' );?> style='margin-left:10px' onclick="clickParam(this)" />
 															<li class='li-none'>
@@ -518,10 +516,14 @@
 													<?if($Premium){?>
 													Стоимость полиса: <b><span style="font-size:26px"><?=round($Premium,2)?></span>&nbsp;<?//=$currencyRaw 
                                                                                                             if('ЕВРО' == $currencyRaw){
-                                                                                                                echo "EURO";
+                                                                                                              
+                                                                                                            $_SESSION['currencyRaw'] = "EURO";
+                                                                                                            echo $_SESSION['currencyRaw'];
                                                                                                                 }
                                                                                                             else if( 'ДОЛЛАР США' == $currencyRaw){
-                                                                                                            echo "USD";
+                                                                                                        
+                                                                                                            $_SESSION['currencyRaw'] = "USD";
+                                                                                                            echo $_SESSION['currencyRaw'];
                                                                                                             }                                                                                                             
                                                                                                             else{
                                                                                                             echo "<p style='color:red'>Ошибка валюты. Обновите пожалуйста страницу.</br> В случае повторения обратитесь к администратору.</p>";

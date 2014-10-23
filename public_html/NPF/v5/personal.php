@@ -1,6 +1,7 @@
 <? 	header('Content-Type: text/html; charset=utf-8');
 	session_start(); 
 	include "constants.php"
+      //  include "index.php"
 	
 	?>
 
@@ -272,7 +273,9 @@
 												<div class="CalculatorResult  b-rooms" style="font-size:16px; position:absolute; left:0; top:0; " >
 														<?if($_SESSION['Premium']){?>
 														
-														Стоимость полиса: <b><span style="font-size:26px"><?=round($_SESSION['Premium'],2)?></span>&nbsp;<?=$currencyRaw?> = <span style="font-size:26px"><?=round($_SESSION['Premium_ru'],2)?></span> руб. (курс ЦБ за <?=date("d.m.Y")?>)</b>
+														Стоимость полиса: <b><span style="font-size:26px"><?=round($_SESSION['Premium'],2)?></span>&nbsp;<? echo $_SESSION['currencyRaw']
+                                                                                                                
+                                                                                                                    ?> = <span style="font-size:26px"><?=round($_SESSION['Premium_ru'],2)?></span> руб. (курс ЦБ за <?=date("d.m.Y")?>)</b>
 														<?}?>
 												</div>
 												
