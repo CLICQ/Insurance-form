@@ -1,9 +1,12 @@
 <?php
+/* -------------------------------------------------------------------------
+(c) spellabs 2014
+Vasiluk Dmitrij 10.20.2014
+-------------------------------------------------------------------------- */
 header('Content-Type: text/html; charset=utf-8');
 	session_start(); 
 	include "constants.php";
-        include "";
-
+  
 class Acknowledgement_Type {
   public $MessageId; // UUIDIdentifier_Type
   public $TraceId; // anyURI
@@ -3056,7 +3059,7 @@ class OLI_LU_POLISSUESUB_TC {
 }
 
 class OLI_LU_POLPROD {
-  public $_; // string
+  public $ProductType = 'Accident and Healf'; // string
   public $tc; // OLI_LU_POLPROD_TC
 }
 
@@ -8127,7 +8130,7 @@ class DestInvestProduct_Type {
   public $DestInvestProductKey; // PERSISTKEY
   public $DestInvestProductSysKey; // SYSKEY
   public $CarrierCode; // string
-  public $ProductCode; // string
+  public $ProductCode ='VZR'; // string
   public $MinAmt; // decimal
   public $MaxAmt; // decimal
   public $MinPct; // double
@@ -8661,7 +8664,7 @@ class Exclusion_Type {
 
 class ExclusionInvestProduct_Type {
   public $CarrierCode; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
 }
 
 class ExpenseNeed_Type {
@@ -8766,7 +8769,7 @@ class FeatureConflict_Type {
   public $FeatureConflictKey; // PERSISTKEY
   public $FeatureConflictSysKey; // SYSKEY
   public $FeatureCode; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $OLifEExtension; // OLifEExtension_Type
   public $id; // ID
   public $DataRep; // DATAREP_TYPES
@@ -8776,7 +8779,7 @@ class FeatureOptConflict_Type {
   public $FeatureOptConflictKey; // PERSISTKEY
   public $FeatureOptConflictSysKey; // SYSKEY
   public $FeatureCode; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $OLifEExtension; // OLifEExtension_Type
   public $id; // ID
   public $DataRep; // DATAREP_TYPES
@@ -8785,7 +8788,7 @@ class FeatureOptConflict_Type {
 class FeatureOptProduct_Type {
   public $FeatureOptProductKey; // PERSISTKEY
   public $FeatureOptProductSysKey; // SYSKEY
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $JurisdictionCC; // JurisdictionCC_Type
   public $Name; // string
   public $Description; // string
@@ -8880,7 +8883,7 @@ class FeatureOptRequisite_Type {
   public $FeatureOptRequisiteKey; // PERSISTKEY
   public $FeatureOptRequisiteSysKey; // SYSKEY
   public $FeatureCode; // string
-  public $ProductCode; // string
+  public $ProductCode ='VZR'; // string
   public $RequisiteLogic; // CRITERIA_OPERATOR
   public $OLifEExtension; // OLifEExtension_Type
   public $id; // ID
@@ -8917,7 +8920,7 @@ class FeatureProductInfo_Type {
   public $FeatureProductInfoKey; // PERSISTKEY
   public $FeatureProductInfoSysKey; // SYSKEY
   public $FeatureCode; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $SaleEffectiveDate; // date
   public $SaleExpirationDate; // date
   public $TransmissableInd; // OLI_LU_BOOLEAN
@@ -8932,7 +8935,7 @@ class FeatureRequisite_Type {
   public $FeatureRequisiteKey; // PERSISTKEY
   public $FeatureRequisiteSysKey; // SYSKEY
   public $FeatureCode; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $OLifEExtension; // OLifEExtension_Type
   public $id; // ID
   public $DataRep; // DATAREP_TYPES
@@ -9572,7 +9575,9 @@ class Holding_Type {
   public $id; // ID
   public $DataRep; // DATAREP_TYPES
   function __constuct(){
-      $this->HoldingTypeCode;
+      $this->HoldingTypeCode = new OLI_LU_HOLDTYPE();
+      $this->CurrencyTypeCode = new OLI_LU_CURRENCYTYPE();
+      
   }
 }
 
@@ -9734,7 +9739,7 @@ class IncomeOptRequisite_Type {
 class IncomePayoutProductOption_Type {
   public $IncomePayoutProductOptionKey; // PERSISTKEY
   public $IncomePayoutProductOptionSysKey; // SYSKEY
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $Sequence; // integer
   public $IncomeOptionCC; // IncomeOptionCC_Type
   public $LivesType; // OLI_LU_LIVESTYPE
@@ -9993,7 +9998,7 @@ class InvestPortfolio_Type {
   public $FullName; // string
   public $CusipNum; // string
   public $ProductSymbol; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $AssetClass; // OLI_LU_ASSETCLASS
   public $CurrencyTypeCode; // OLI_LU_CURRENCYTYPE
   public $AnnualDividend; // decimal
@@ -11025,7 +11030,7 @@ class LoanProvision_Type {
   public $MaxNumConcurrentLoans; // integer
   public $MaxNumNewLoansPolYr; // integer
   public $CarrierCode; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $LoanIntCapitalizationTiming; // OLI_LU_EVENTTIMING
   public $LoanIntCapitalizationFreq; // OLI_LU_PAYMODE
   public $LoanInterestBillingDays; // integer
@@ -12216,7 +12221,7 @@ class Payout_Type {
   public $LevelizationFrequency; // OLI_LU_PAYMODE
   public $GuarPayoutAmt; // decimal
   public $BeneDesignationWording; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $AssumedInterestRate; // double
   public $SplitPctIncrement; // double
   public $RMDTaxRule; // OLI_LU_TAXRULE
@@ -12494,7 +12499,7 @@ class Policy_Type {
   public $CertificateNo; // string
   public $LineOfBusiness; // OLI_LU_LINEBUS
   public $ProductType; // OLI_LU_POLPROD
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $ProductVersionCode; // string
   public $CarrierCode; // string
   public $PlanName; // string
@@ -12693,7 +12698,7 @@ class PolicyProduct_Type {
   public $CarrierCode; // string
   public $CarrierName; // string
   public $PlanName; // string
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $ProductVersionCode; // string
   public $VersionDate; // date
   public $ShortName; // string
@@ -12814,7 +12819,7 @@ class PolicyProduct_Type {
 class PolicyProductInfo_Type {
   public $PolicyProductInfoKey; // PERSISTKEY
   public $PolicyProductInfoSysKey; // SYSKEY
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $CarrierCode; // string
   public $PlanName; // string
   public $NettingAllowedInd; // OLI_LU_BOOLEAN
@@ -13540,7 +13545,7 @@ class ReinsuranceInfo_Type {
   public $InterestDuration; // integer
   public $InterestDurationQualifier; // OLI_LU_PAYMODE
   public $EmploymentClass; // OLI_LU_EMPLOYMENTCLASS
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $ModalPremNetDueAmt; // decimal
   public $ModalNetStdPremAmt; // decimal
   public $ModalNetStdAllowanceAmt; // decimal
@@ -13588,7 +13593,7 @@ class Rejection_Type {
 class RelatedParticipantProductInfo_Type {
   public $RelatedParticipantProductInfoKey; // PERSISTKEY
   public $RelatedParticipantProductInfoSysKey; // SYSKEY
-  public $ProductCode; // string
+  public $ProductCode = 'VZR'; // string
   public $ObjectType; // OLI_LU_OBJECTTYPE
   public $ParticipantRoleCode; // OLI_LU_PARTICROLE
   public $MinNumRelatedRolePlayers; // integer
