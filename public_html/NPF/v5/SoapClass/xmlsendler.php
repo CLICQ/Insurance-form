@@ -1,9 +1,13 @@
 <?php 
+/* -------------------------------------------------------------------------
+(c) spellabs 2014
+Vasiluk Dmitrij 10.20.2014
+-------------------------------------------------------------------------- */
         //Data, connection, auth
-        $dataFromTheForm = $_POST['fieldName']; // request data from the form
+       // $dataFromTheForm = $_POST['fieldName']; // request data from the form
         $soapUrl = " http://213.33.168.45:8082/txlife.wsdl"; // asmx URL of WSDL
-       // $soapUser = "username";  //  username
-       // $soapPassword = "password"; // password
+       // $soapUser = "";  //  username
+        //$soapPassword = ""; // password
 
         // xml post structure
 
@@ -315,7 +319,7 @@
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-          //  curl_setopt($ch, CURLOPT_USERPWD, $soapUser.":".$soapPassword); // username and password - declared at the top of the doc
+         //  curl_setopt($ch, CURLOPT_USERPWD, $soapUser.":".$soapPassword); // username and password - declared at the top of the doc
             curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
             curl_setopt($ch, CURLOPT_TIMEOUT, 10);
             curl_setopt($ch, CURLOPT_POST, true);
@@ -334,4 +338,10 @@
             $parser = simplexml_load_string($response2);
             // user $parser to get your data out of XML response and to display it.
                echo $parser;
+               echo $response1;
+               echo $response2;
+               echo $response;
+             //  echo $xml_post_string;
+               
+               
 
