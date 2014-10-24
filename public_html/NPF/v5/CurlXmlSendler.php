@@ -322,16 +322,6 @@ $response = curl_exec($curl) or die ("cURL execute eroor" . curl_error($curl));
 //print_r('<p class="font-size:14px;">'.$request.'</p>');
 print_r($response);
 curl_close($curl);
-
-   // converting
-            $response1 = str_replace("<soap:Body>","",$response);
-            $response2 = str_replace("</soap:Body>","",$response1);
-
-            // convertingc to XML
-            $parser = simplexml_load_string($response2);
-            // user $parser to get your data out of XML response and to display it.
-            print_r($parser);
-
 ?>
 
 
