@@ -346,29 +346,6 @@
 													</div>
 												</div>
 												<div class="b-inline b-form-elem elem-size-big elem-style-marked b-destination">
-													<select name="Currency" id="Currency"  class="selector" <?if ($isShengen == 'true' ) echo "disabled";?> onchange='isChange();' >
-															
-																<? $tmpCur = $_SESSION["Currency"];
-																	if ($isShengen == 'true') $tmpCur = '1'; //euro 
-																	foreach($CurrencyArrays as $Key => $OneCurrency){
-																	?>
-																	<option <?if( $tmpCur == $Key){echo "selected";}?> value="<?=$Key?>" <?if ($isShengen == 'true' && $Key == '0') echo "style='display:none'";  ?> ><?
-                                                                                                                                           // $OneCurrency[2]
-                                                                                                                                                if('ЕВРО' == $OneCurrency[2]){
-                                                                                                                                                echo "EURO";
-                                                                                                                                                }
-                                                                                                                                            else if( 'ДОЛЛАР США' == $OneCurrency[2]){
-                                                                                                                                            echo "USD";
-                                                                                                                                            }                                                                                                             
-                                                                                                                                            else{
-                                                                                                                                            echo "<p style='color:red'>Ошибка валюты. Обновите пожалуйста страницу.</br> В случае повторения обратитесь к администратору.</p>";
-                                                                                                                                            }
-                                                                                                 
-                                                                                                                        
-                                                                                                                                                        ?></option>
-																<?}?>
-															
-													</select>
 												</div>
 											<div>Предустановленный набор опций зависит от суммы страхового покрытия!</div>
 											</div>

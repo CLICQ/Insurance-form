@@ -5,7 +5,7 @@ Vasiluk Dmitrij 10.20.2014
 -------------------------------------------------------------------------- */
         //Data, connection, auth
        // $dataFromTheForm = $_POST['fieldName']; // request data from the form
-        $soapUrl = " http://213.33.168.45:8082/txlife.wsdl"; // asmx URL of WSDL
+        $soapUrl = "http://213.33.168.45:8082/txlife.wsdl"; // asmx URL of WSDL
        // $soapUser = "";  //  username
         //$soapPassword = ""; // password
 
