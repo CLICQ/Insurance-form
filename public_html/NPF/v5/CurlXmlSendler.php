@@ -9,40 +9,7 @@ header('Content-Type: text/html; charset=utf-8');
 	include "calculate.php";
        
 
-$request  .= '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><TXLife xmlns="http://ACORD.org/Standards/Life/2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ACORD.org/Standards/Life/2 schemas/TXLife2.28.00.xsd">
-	 <TXLifeRequest>
-		<TransRefGUID>A1DCF553-ECEC-4A84-A630-9196AA5FC18F</TransRefGUID>
-		<TransType tc="508">Payment Transaction</TransType>
-		<TransExeDate>2014-10-13</TransExeDate>
-		<TransExeTime>11:16:49</TransExeTime>
-		<OLifE>
-		<SourceInfo>
-			<SourceInfoName>http://www.cbins.ru/ex/form/?key=</SourceInfoName>
-		</SourceInfo>
-		<Holding id="Policy_1">
-			<HoldingTypeCode tc="2">Policy</HoldingTypeCode>
-			<Policy>
-			 <!-- Номер договора (поле строкового типа, необязательное), -->
-			 <PolNumber>100000592</PolNumber>
-			 <FinancialActivity id="FinancialActivity_1">
-				<Payment>
-					 <!-- Сумма платежа (необязательное). -->
-
-					<PaymentAmt>75917</PaymentAmt>
-				</Payment>
-			 </FinancialActivity>
-			 <OLifEExtension VendorCode="470">
-				<PDest>kbs</PDest>
-				 <!-- Дата первой операции -->
-				 <StartPayDate>2014-10-13T11:16:49</StartPayDate>
-				 <!--Дата последней операции-->
-				 <LastPayDate>2014-10-14T11:16:49</LastPayDate>
-				 <!-- Количество списаний -->
-				 <PaymentCount/>
-				 <!--Рассрочка, т.е. кол-во месяцев между платежами. Платеж осуществляется в один и тот же день каждого месяца. Если в месяце нет нужного дня - платеж осуществляется в предыдущий день-->
-				 <Installment>0</Installment>
-					 <!-- Информация о теле запроса, если таковая присутствует -->
-				 <MessageBody><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+$request  .= '<?xml version="1.0" encoding="UTF-8"?>
 <TXLife xmlns="http://ACORD.org/Standards/Life/2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ACORD.org/Standards/Life/2 TXLife2.28.00.xsd">
 	<TXLifeRequest>
 		<TransRefGUID>A1DCF553-ECEC-4A84-A630-9196AA5FC18F</TransRefGUID>
@@ -273,34 +240,7 @@ $request  .= '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelop
 		]]><![CDATA[	</Relation>
 		</OLifE>
 	</TXLifeRequest>
-</TXLife>
-				 ]]></MessageBody>
-			 </OLifEExtension>
-			</Policy>
-		 </Holding>
-		 <Party id="Party_1">
-			<PartyTypeCode tc="1">Individual</PartyTypeCode>
-			<!-- Контактный номер телефона (необязательное) -->
-			<Phone>
-			 <PhoneTypeCode tc="12">Cell</PhoneTypeCode>
-			 <!-- 1 - Домашний, 12 - мобильный, 2- рабочий -->
-			 <CountryCode/>
-			 <AreaCode/>
-			 <DialNumber>+79220228161</DialNumber>
-			</Phone>
-			<!-- Электронная почта (необязательное) -->
-			<EMailAddress>
-			 <AddrLine>sea-surf@yandex.ru</AddrLine>
-			</EMailAddress>
-		 </Party>
-		 <Relation id="Relation_1" OriginatingObjectID="Policy_1" RelatedObjectID="Party_1">
-			 <OriginatingObjectType tc="4">Holding</OriginatingObjectType>
-			 <RelatedObjectType tc="6">Party</RelatedObjectType>
-			 <RelationRoleCode tc="31">Payer</RelationRoleCode>
-		 </Relation>
-		</OLifE>
-	 </TXLifeRequest>
-	</TXLife></soap:Body></soap:Envelope>';
+</TXLife>';
 
 $curl_options = array (
   CURLOPT_URL => 'http://213.33.168.45:8082/txlife.wsdl',
@@ -311,7 +251,7 @@ $curl_options = array (
         'Host: 213.33.168.45', 
         'Content-Type: text/xml; charset=utf-8', 
         'Content-Length: '.strlen(($request)).'',
-        'SOAPAction: "http://213.33.168.45:8082/txlife"'
+        'SOAPAction: "http://213.33.168.45:8082"'
     ),
   CURLOPT_POSTFIELDS => ($request)
   
@@ -320,7 +260,7 @@ $curl = curl_init() or die("cURL init error");
 curl_setopt_array($curl, $curl_options) or die("cURL set options error" . curl_error($curl));
 $response = curl_exec($curl) or die ("cURL execute eroor" . curl_error($curl));
 //print_r('<p class="font-size:14px;">'.$request.'</p>');
-print_r($response);
+print_r('<br/><h3>'.$response.'</h3>');
 curl_close($curl);
 ?>
 
