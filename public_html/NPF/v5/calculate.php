@@ -185,21 +185,22 @@
 		$CountriesArrays = $stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"];
             
                 
-                function GeneratorArrayValuteDate(){
+           /*     function GeneratorArrayValuteDate(){
+               global $OneCountry;
                 $CountriesArrays1 = array(array());
                       foreach($CountriesArrays as $OneCo)
                          {
-                          $CountriesArrays1[0] = $OneCo[0];
-                          $CountriesArrays1[1] = $OneCo[1];
-                          $CountriesArrays1[2] = $OneCo[2];
+                          $CountriesArrays1[0] = $OneCountry[0];
+                          $CountriesArrays1[1] = $OneCountry[1];
+                          $CountriesArrays1[2] = $OneCountry[2];
                           foreach($stdClassObjectArr as $One)
                                {
                                  if($One[0]==$OneCo[0])
                                     {
-                                        $CountriesArrays1[3] =  strtoupper($One[2]);
+                                        $CountriesArrays1[3] =  strtoupper($OneCountry[2]);
                                     foreach($CurrencyArrays as $Currencyval)
                                         {
-                                        if (strtoupper($Currencyval[0]) == strtoupper($One[2]) )
+                                        if (strtoupper($Currencyval[0]) == strtoupper($OneCountry[2]) )
                                         {
                                         $CountriesArrays1[4] = $Currencyval[2];
                                         }
@@ -208,11 +209,50 @@
                                                      }                  
                                                         }
                                                          return $CountriesArrays1;  
-                                                         }
-                                                         
-                                                              print_r( $CountriesArrays1);
-                                
-                                
+                                                         }*/
+														 
+		$CurrencyArrays = $stdClassObjectArray2["63665791-125E-46E7-878B-7E625EA62803"];
+         /*      function GeneratorArrayValuteDate()
+			   {
+
+			   global $CountriesArrays; //массив стран
+			   global $stdClassObjectArr;//массив MInSumm, который ставит в соответствие страну и валюту
+			   global $CurrencyArrays; //массив валют
+			 */ 
+                $CountriesArrays1 = array(array());
+				$i = 0;
+                      foreach($CountriesArrays as $OneCo)
+                         {
+                          $CountriesArrays1[$i][0] = $OneCo[0];
+                          $CountriesArrays1[$i][1] = $OneCo[1];
+                          $CountriesArrays1[$i][2] = $OneCo[2];
+                          
+						  foreach($stdClassObjectArr as $One)
+                               {
+                                 if(strtoupper($One[0])==strtoupper($OneCo[0]))
+                                    {
+										//гуид валюты
+                                        $CountriesArrays1[$i][3] =  strtoupper($One[2]);
+										
+										foreach($CurrencyArrays as $Currencyval)
+                                        {
+											if (strtoupper($Currencyval[0]) == strtoupper($One[2]) )
+											{
+											//строковое обозначение валюты
+											$CountriesArrays1[$i][4] = $Currencyval[2];
+											}
+                                        } 
+                                    }
+                                } 
+						$i++;
+                        }
+				 //return $CountriesArrays1;  
+				 //$CountriesArray = $CountriesArrays1;
+				/* }                 */
+       
+        echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
+		
+		
 		foreach($CountriesArrays as $OneCountry)
 			{
 				$AllCountries[strtoupper($OneCountry[0])] = $OneCountry[4];
@@ -571,7 +611,7 @@
 		
 		
 		//Валюта
-		$CurrencyArrays = $stdClassObjectArray2["63665791-125E-46E7-878B-7E625EA62803"];
+		//$CurrencyArrays = $stdClassObjectArray2["63665791-125E-46E7-878B-7E625EA62803"];
 		//if($groupOfProgram == strtoupper($groupOfProgramArray[2][0])){//если выбран Мульти-Шенген
 		
 		//вместо вот этого
@@ -608,6 +648,16 @@
 		//echo "<pre>"; print_r( $CurrencyArrays); echo "</pre>";
                // echo $CurrencyArrays[1][2];
                 //echo '<br>'.$CurrencyArrays[0][2];
+                
+                function ListArray(){
+                    global $CurrencyArrays;
+                    global $CountriesArrays;
+                    $SumArray = $CurrencyArrays + $CountriesArrays;
+                    return $SumArray;
+                }
+                
+              //  print_r(ListArray());
+              // print_r(GeneratorArrayValuteDate());
                 
                 
                 

@@ -1,15 +1,42 @@
-<?php
-/* -------------------------------------------------------------------------
-(c) spellabs 2014
-Vasiluk Dmitrij 10.20.2014
--------------------------------------------------------------------------- */
-header('Content-Type: text/html; charset=utf-8');
-	session_start();
-	error_reporting( E_ERROR );
-//	include "calculate.php";
-       
+<?require_once('../lib/nusoap.php');
+ini_set("display_errors", "on");
+$endpoint = "http://213.33.168.45:8082/txlife.wsdl";
 
-$request  .= '<?xml version="1.0" encoding="UTF-8"?>
+header("Content-Type: text/html; charset=utf-8");
+$bodyxml = '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><TXLife xmlns="http://ACORD.org/Standards/Life/2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ACORD.org/Standards/Life/2 schemas/TXLife2.28.00.xsd">
+	 <TXLifeRequest>
+		<TransRefGUID>A1DCF553-ECEC-4A84-A630-9196AA5FC18F</TransRefGUID>
+		<TransType tc="508">Payment Transaction</TransType>
+		<TransExeDate>2014-10-13</TransExeDate>
+		<TransExeTime>11:16:49</TransExeTime>
+		<OLifE>
+		<SourceInfo>
+			<SourceInfoName>http://www.cbins.ru/ex/form/?key=</SourceInfoName>
+		</SourceInfo>
+		<Holding id="Policy_1">
+			<HoldingTypeCode tc="2">Policy</HoldingTypeCode>
+			<Policy>
+			 <!-- Номер договора (поле строкового типа, необязательное), -->
+			 <PolNumber>100000592</PolNumber>
+			 <FinancialActivity id="FinancialActivity_1">
+				<Payment>
+					 <!-- Сумма платежа (необязательное). -->
+
+					<PaymentAmt>75917</PaymentAmt>
+				</Payment>
+			 </FinancialActivity>
+			 <OLifEExtension VendorCode="470">
+				<PDest>kbs</PDest>
+				 <!-- Дата первой операции -->
+				 <StartPayDate>2014-10-13T11:16:49</StartPayDate>
+				 <!--Дата последней операции-->
+				 <LastPayDate>2014-10-14T11:16:49</LastPayDate>
+				 <!-- Количество списаний -->
+				 <PaymentCount/>
+				 <!--Рассрочка, т.е. кол-во месяцев между платежами. Платеж осуществляется в один и тот же день каждого месяца. Если в месяце нет нужного дня - платеж осуществляется в предыдущий день-->
+				 <Installment>0</Installment>
+					 <!-- Информация о теле запроса, если таковая присутствует -->
+				 <MessageBody><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <TXLife xmlns="http://ACORD.org/Standards/Life/2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ACORD.org/Standards/Life/2 TXLife2.28.00.xsd">
 	<TXLifeRequest>
 		<TransRefGUID>A1DCF553-ECEC-4A84-A630-9196AA5FC18F</TransRefGUID>
@@ -89,7 +116,7 @@ $request  .= '<?xml version="1.0" encoding="UTF-8"?>
 				<OLifEExtension VendorCode="470">
 					<CurrencyPayTypeCode tc="">euro</CurrencyPayTypeCode>
 					<!-- валюта оплаты-->
-					< >30000</SumInsured>
+					<SumInsured>30000</SumInsured>
 					<!-- страховая сумма по договору -->
 					
 					<Sum>14.87</Sum>
@@ -240,28 +267,68 @@ $request  .= '<?xml version="1.0" encoding="UTF-8"?>
 		]]><![CDATA[	</Relation>
 		</OLifE>
 	</TXLifeRequest>
-</TXLife>';
+</TXLife>
+				 ]]></MessageBody>
+			 </OLifEExtension>
+			</Policy>
+		 </Holding>
+		 <Party id="Party_1">
+			<PartyTypeCode tc="1">Individual</PartyTypeCode>
+			<!-- Контактный номер телефона (необязательное) -->
+			<Phone>
+			 <PhoneTypeCode tc="12">Cell</PhoneTypeCode>
+			 <!-- 1 - Домашний, 12 - мобильный, 2- рабочий -->
+			 <CountryCode/>
+			 <AreaCode/>
+			 <DialNumber>+79220228161</DialNumber>
+			</Phone>
+			<!-- Электронная почта (необязательное) -->
+			<EMailAddress>
+			 <AddrLine>sea-surf@yandex.ru</AddrLine>
+			</EMailAddress>
+		 </Party>
+		 <Relation id="Relation_1" OriginatingObjectID="Policy_1" RelatedObjectID="Party_1">
+			 <OriginatingObjectType tc="4">Holding</OriginatingObjectType>
+			 <RelatedObjectType tc="6">Party</RelatedObjectType>
+			 <RelationRoleCode tc="31">Payer</RelationRoleCode>
+		 </Relation>
+		</OLifE>
+	 </TXLifeRequest>
+	</TXLife></soap:Body></soap:Envelope>';
 
-$curl_options = array (
-  CURLOPT_URL => 'http://213.33.168.45:8082/txlife.wsdl',
-  CURLOPT_POST => TRUE,
-  CURLOPT_RETURNTRANSFER => FALSE,
-  CURLOPT_HEADER => array(
-        'POST /Remote/Remote.asmx HTTP/1.1', 
-        'Host: 213.33.168.45', 
-        'Content-Type: text/xml; charset=utf-8', 
-        'Content-Length: '.strlen(($request)).'',
-        'SOAPAction: "http://213.33.168.45:8082"'
-    ),
-  CURLOPT_POSTFIELDS => ($request)
-  
-);
-$curl = curl_init() or die("cURL init error");
-curl_setopt_array($curl, $curl_options) or die("cURL set options error" . curl_error($curl));
-$response = curl_exec($curl) or die ("cURL execute eroor" . curl_error($curl));
-//print_r('<p class="font-size:14px;">'.$request.'</p>');
-print_r('<br/><h3>'.$response.'</h3>');
-curl_close($curl);
+
+$client = new nusoap_client("http://213.33.168.45:8082/txlife.wsdl",true);
+$err = $client->getError();
+if ($err) {
+ echo '<h2>Constructor error</h2><pre>' . $err . '</pre>';
+ exit();
+}
+
+$client->soap_defencoding = 'utf-8';
+$client->useHTTPPersistentConnection();
+$client->setUseCurl($useCURL);
+$bsoapaction = "http://213.33.168.45:8082/txlife.wsdl";
+$result = $client->send($bodyxml, $bsoapaction);
+// Check for a fault
+if ($client->fault) {
+ echo '<h2>Fault</h2><pre>';
+ print_r($result);
+ echo '</pre>';
+} else {
+ // Check for errors
+ $err = $client->getError();
+ if ($err) {
+  // Display the error
+  echo '<h2>Error</h2><pre>' . $err . '</pre>';
+ } else {
+  // Display the result
+  echo '<h2>Result</h2><pre>';
+  print_r($result);
+  echo '</pre>';
+ }
+}
+echo '<h2>Request</h2><pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<h2>Response</h2><pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+echo '<h2>Client Debug</h2><pre>' . htmlspecialchars($client->debug_str, ENT_QUOTES) . '</pre>';
+echo '<h2>Proxy Debug</h2><pre>' . htmlspecialchars($proxy->debug_str, ENT_QUOTES) . '</pre>';
 ?>
-
-

@@ -165,7 +165,7 @@
 														foreach($arr as $OneCountry){
 														
 														?>
-														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
+														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$OneCountry[3]?>" curency-raw="<?=$OneCountry[4]?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
 													<?}?>
 												</select>
 											</div>

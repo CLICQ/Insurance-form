@@ -62,7 +62,6 @@ function isAllFill()
 				
 				$('#messageAll').show();
 				$('#CalculatorResult').hide();
-				$('#valuecurrency').text('<?php echo $currencyRaw;?>');
 			}
 	}
 
