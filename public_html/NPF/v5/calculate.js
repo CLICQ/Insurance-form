@@ -468,6 +468,8 @@ function clickCountry()
 			ShowUniqueOptions();
 			SelectTypeActions();
 		}
+                var currency = $('#CountryID option:selected').attr( "curency-raw" );
+                $('#valuecurrency').text(currency);
 	 /*	$('#CountryID').change(
      function(){
          $(this).closest('form').trigger('submit');

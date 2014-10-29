@@ -162,10 +162,13 @@
 														
 															
 														//выведем в селект
+                                                                                                                
 														foreach($arr as $OneCountry){
+                                                                                                                
+                                                                                                                $k++;
 														
 														?>
-														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$OneCountry[3]?>" curency-raw="<?=$OneCountry[4]?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
+														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$CountriesArrays1[$k-1][0]?>" curency-raw="<?=$CountriesArrays1[$k-1][4]?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
 													<?}?>
 												</select>
 											</div>
@@ -347,13 +350,14 @@
 												</div>
 												<div class="b-inline" id="valuecurrency" style="margin-top:12px; margin-left:15px; ">
                                                                                                 <script type="text/javascript">
-                                                                                                    var userName = '<?php echo $currencyRaw;?>';
-                                                                                                    document.write('Значение PHP-переменной: ' + userName);
-
+                                                                                                 
+                                                                                                   var currency = $('#CountryID option:selected').attr( "curency-raw" );
+                                                                                                   $('#valuecurrency').text(currency)
+$('#divCurrencyId').text(currency)
                                                                                                     </script>
                                                                                                     <?  
                                                                                                  //todo:Test output. You need to replace the English version.
-                                                                                                 echo  '<p>'.$currencyRaw.'</p>'   ?>
+                                                                                                // echo  '<p>'.$currencyRaw.'</p>'   ?>
 												</div>
 											<div>Предустановленный набор опций зависит от суммы страхового покрытия!</div>
 											</div>
