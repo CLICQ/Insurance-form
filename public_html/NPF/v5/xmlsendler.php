@@ -59,7 +59,7 @@ Vasiluk Dmitrij 10.20.2014
 		<!-- Является ли тестовым запросом -->
 		<OLifE>
 				<SourceInfo>
-					<SourceInfoName>AISDMS</SourceInfoName>
+					<SourceInfoName>http://www.cbins.ru/ex/form/?key=</SourceInfoName>
 					<!-- Идентификатор внешней системы-->
 				</SourceInfo>				
 			<Holding id="Policy_1">
@@ -302,7 +302,8 @@ Vasiluk Dmitrij 10.20.2014
 		 </Relation>
 		</OLifE>
 	 </TXLifeRequest>
-	</TXLife></soap:Body></soap:Envelope>';  
+	</TXLife></soap:Body></soap:Envelope>
+';  
            $headers = array(
                         "Content-type: text/xml;charset=\"utf-8\"",
                         "Accept: text/xml",

@@ -166,14 +166,53 @@
 		{
 		$CountryID = strtoupper($_POST["CountryID"]);}
 		$stdClassObjectArray  = (array)$obj;
+		
+		//$stdClassObjectArray1 = (array)$stdClassObjectArray["tarifList"];
 		$stdClassObjectArray2 = (array)$stdClassObjectArray["classifierList"];
 		$stdClassObjectArray3 = (array)$stdClassObjectArray["tarifList"];
+		
+		$stdClassObjectArr = $stdClassObjectArray3["MinSumm"];
+	
+	//echo "<pre>"; print_r($stdClassObjectArr); echo "</pre>";
 	
 		$TarifShortProgArray = $stdClassObjectArray3["TarifShortProg"]; // Однократный		
 		$TrifMultiProgArray = $stdClassObjectArray3["TrifMultiProg"]; // Многократный (Мультишенген)
 		$TarifYearProgArray = $stdClassObjectArray3["TarifYearProg"]; // Многократный (Год)
 
+		//var_dump($stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"]);
+		//echo "<pre>"; print_r($stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"]); echo "</pre>";
+		
 		$CountriesArrays = $stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"];
+            
+                
+                function GeneratorArrayValuteDate(){
+                $CountriesArrays1 = array(array());
+                      foreach($CountriesArrays as $OneCo)
+                         {
+                          $CountriesArrays1[0] = $OneCo[0];
+                          $CountriesArrays1[1] = $OneCo[1];
+                          $CountriesArrays1[2] = $OneCo[2];
+                          foreach($stdClassObjectArr as $One)
+                               {
+                                 if($One[0]==$OneCo[0])
+                                    {
+                                        $CountriesArrays1[3] =  strtoupper($One[2]);
+                                    foreach($CurrencyArrays as $Currencyval)
+                                        {
+                                        if (strtoupper($Currencyval[0]) == strtoupper($One[2]) )
+                                        {
+                                        $CountriesArrays1[4] = $Currencyval[2];
+                                        }
+                                            } 
+                                                }
+                                                     }                  
+                                                        }
+                                                         return $CountriesArrays1;  
+                                                         }
+                                                         
+                                                              print_r( $CountriesArrays1);
+                                
+                                
 		foreach($CountriesArrays as $OneCountry)
 			{
 				$AllCountries[strtoupper($OneCountry[0])] = $OneCountry[4];
@@ -534,13 +573,47 @@
 		//Валюта
 		$CurrencyArrays = $stdClassObjectArray2["63665791-125E-46E7-878B-7E625EA62803"];
 		//if($groupOfProgram == strtoupper($groupOfProgramArray[2][0])){//если выбран Мульти-Шенген
-		if($isShengen == 'true'){//если выбран Мульти-Шенген
+		
+		//вместо вот этого
+		/*if($isShengen == 'true'){//если выбран Мульти-Шенген
 			$currency = strtoupper("43B13C6D-EEAF-4F35-A990-4236DCDAB212"); // то вылюта EURO
 			$currencyRaw = "ЕВРО";
 		}else{
 			$currency = strtoupper($CurrencyArrays[$_POST["Currency"]][0]);
 			$currencyRaw = $CurrencyArrays[$_POST["Currency"]][2];		
-		}		
+		}	
+		*/
+		//конец вместо вот этого
+		
+		//определим валюту из массива MinSumm
+		//я вставила вот это
+		foreach($stdClassObjectArr as $One)
+			 {
+				 if($One[0]==$CountryID)
+				 {
+					$currency = strtoupper($One[2]);
+					
+					
+					foreach($CurrencyArrays as $Currencyval)
+					{
+						if (strtoupper($Currencyval[0]) == $currency )
+						{
+							$currencyRaw = $Currencyval[2];
+						}
+					} 
+				 }
+			 }		
+		//echo "<pre>"; print_r( $currency); echo "</pre>";
+		//echo "<pre>"; print_r( $currencyRaw1); echo "</pre>";
+		//echo "<pre>"; print_r( $CurrencyArrays); echo "</pre>";
+               // echo $CurrencyArrays[1][2];
+                //echo '<br>'.$CurrencyArrays[0][2];
+                
+                
+                
+       
+		
+		//конец я вставила вот это
 		
 		
 		
@@ -700,6 +773,7 @@
 	
 	//сохраним все переменные в сессию
 	$_SESSION['CountriesArrays']=$CountriesArrays;
+        // GeneratorArrayValuteDate()= $CountriesArrays;
 	$_SESSION['amSportCalc']=$amSport;
 	$_SESSION['CancelTravel']=$CancelTravel;
 	$_SESSION['currency']=$currency;
@@ -1116,3 +1190,4 @@
 			echo 'SESSION['.$element.']='.$value.'<br/>';
 		}*/
 	?>
+        

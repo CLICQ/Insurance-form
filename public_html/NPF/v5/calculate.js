@@ -62,7 +62,7 @@ function isAllFill()
 				
 				$('#messageAll').show();
 				$('#CalculatorResult').hide();
-				
+				$('#valuecurrency').text('<?php echo $currencyRaw;?>');
 			}
 	}
 
@@ -469,8 +469,15 @@ function clickCountry()
 			ShowUniqueOptions();
 			SelectTypeActions();
 		}
-		$('#countryError').hide();
-		isChange();
+	 /*	$('#CountryID').change(
+     function(){
+         $(this).closest('form').trigger('submit');
+         or:
+         $('#formElementId').trigger('submit');
+            or:
+         $('#formElementId').submit();
+         
+    });*/
 	}
 				
 //выбрали тип полиса

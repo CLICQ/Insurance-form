@@ -139,7 +139,7 @@
 
 											<div class="b-inline b-form-elem elem-size-big elem-style-marked b-destination">
 												<label class="b-form-elem_label"  for="dest">Какую страну планируете посетить?</label>
-												<select name="CountryID" id="CountryID" class="b-form-elem_control" onchange="clickCountry()" value=<?if($_SESSION["CountryID"]) echo $_SESSION["CountryID"];?> >
+												<select name="CountryID" type="submit" id="CountryID" class="b-form-elem_control" onchange="clickCountry()" value=<?if($_SESSION["CountryID"]) echo $_SESSION["CountryID"];?> >
 													<option selected >Выберите страну</option>
 													<?	
 														$arr = array();
@@ -165,7 +165,7 @@
 														foreach($arr as $OneCountry){
 														
 														?>
-														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3];?></option>
+														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
 													<?}?>
 												</select>
 											</div>
@@ -345,7 +345,15 @@
 														</div>
 													</div>
 												</div>
-												<div class="b-inline b-form-elem elem-size-big elem-style-marked b-destination">
+												<div class="b-inline" id="valuecurrency" style="margin-top:12px; margin-left:15px; ">
+                                                                                                <script type="text/javascript">
+                                                                                                    var userName = '<?php echo $currencyRaw;?>';
+                                                                                                    document.write('Значение PHP-переменной: ' + userName);
+
+                                                                                                    </script>
+                                                                                                    <?  
+                                                                                                 //todo:Test output. You need to replace the English version.
+                                                                                                 echo  '<p>'.$currencyRaw.'</p>'   ?>
 												</div>
 											<div>Предустановленный набор опций зависит от суммы страхового покрытия!</div>
 											</div>
@@ -402,11 +410,11 @@
 															<div id = 'divInpAdvParamTrans' <?if ($_SESSION['divInpAdvParamTrans']) echo $_SESSION['divInpAdvParamTrans'];?> >
 																<input type='checkbox' id='inpAdvParamTrans' name='inpAdvParamTrans' class='inpAdvParam' 
                                                                                                                                                                             <? if($_SESSION["InsuredSum"] == 15000){echo '';}
-                                                                                                                                                                            else if ($_SESSION["InsuredSum"] == 30000 ){echo 'checked ';}
-                                                                                                                                                                             else if ($_SESSION["InsuredSum"] == 30000){echo 'checked ';}
-                                                                                                                                                                             else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
-                                                                                                                                                                             else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
-                                                                                                                                                                             else { echo ' ';}
+                                                                                                                                                                                else if ($_SESSION["InsuredSum"] == 30000 ){echo 'checked ';}
+                                                                                                                                                                                    else if ($_SESSION["InsuredSum"] == 30000){echo 'checked ';}
+                                                                                                                                                                                        else if ($_SESSION["InsuredSum"] == 50000){echo 'checked ';}
+                                                                                                                                                                                        else if ($_SESSION["InsuredSum"] == 100000){echo 'checked ';}
+                                                                                                                                                                                            else { echo ' ';}
 																						foreach($_SESSION['CountriesArrays'] as $OneCountry)
 																							{	if($_SESSION["CountryID"] == $OneCountry[0]){$Country=$OneCountry[2];}} 
 																						GetDisplay( $Country, $_SESSION["groupOfProgram"], 'advParamTrans','0' ); ?> 	 onclick="clickParam(this)"/>
