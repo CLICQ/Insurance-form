@@ -162,13 +162,26 @@
 														
 															
 														//выведем в селект
-                                                                                                                
+                                                                                                                $k = 0;
 														foreach($arr as $OneCountry){
                                                                                                                 
-                                                                                                                $k++;
+                                                                                                                ++$k;
 														
 														?>
-														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$CountriesArrays1[$k-1][0]?>" curency-raw="<?=$CountriesArrays1[$k-1][4]?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
+														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$CountriesArrays1[$k-1][0]?>" curency-raw="
+                                                                                                                    <?php    
+//                                                                                                                    echo $CountriesArrays1[$k-1][4];
+                                                                                                                if($CountriesArrays1[$k-1][4]=='ДОЛЛАР США'){
+                                                                                                                    echo "USD";
+                                                                                                                }
+                                                                                                                else if($CountriesArrays1[$k-1][4]=='ЕВРО'){
+                                                                                                                echo "EURO" ;  }
+                                                                                                                 else{
+                                                                                                                      echo "Currency Error";
+                                                                                                                      
+                                                                                                                  }
+                                                                                                                
+                                                                                                                        ?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
 													<?}?>
 												</select>
 											</div>

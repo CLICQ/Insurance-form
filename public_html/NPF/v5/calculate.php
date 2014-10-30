@@ -250,7 +250,7 @@
 				 //$CountriesArray = $CountriesArrays1;
 				/* }                 */
        
-        echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
+        //echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
 		
 		
 		foreach($CountriesArrays as $OneCountry)
