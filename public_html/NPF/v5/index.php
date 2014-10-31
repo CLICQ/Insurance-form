@@ -329,7 +329,7 @@
 											<hr class="for-one for-all" style="border-top: 1px dashed rgb(204, 204, 204)"/>
 											
 											<div class="b-line for-one for-all b-rooms">
-												<label class="b-form-elem_label" style="font-size:16px;" for="dest">Выберите сумму страхового покрытия и валюту: </label>
+												<label class="b-form-elem_label" style="font-size:16px;" for="dest">Выберите сумму страхового покрытия: </label>
 												<div  class="b-inline b-form-elem b-adults elem-size-big elem-style-marked" >
 													<div class="b-form-elem_wrapper b-wrapper-autocomplete js-acContainer">
 														<div id="radio" >
