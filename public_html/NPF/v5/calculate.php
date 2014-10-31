@@ -4,7 +4,7 @@
 	
 	include 'constants.php';
 
-
+//todo: Принять решения по массивам.
 	// Получаем текущие курсы валют в rss-формате с сайта www.cbr.ru 
 		  $content = get_content(); 
 		  // Разбираем содержимое, при помощи регулярных выражений 
@@ -172,9 +172,7 @@
 		$stdClassObjectArray3 = (array)$stdClassObjectArray["tarifList"];
 		
 		$stdClassObjectArr = $stdClassObjectArray3["MinSumm"];
-	
-	//echo "<pre>"; print_r($stdClassObjectArr); echo "</pre>";
-	
+
 		$TarifShortProgArray = $stdClassObjectArray3["TarifShortProg"]; // Однократный		
 		$TrifMultiProgArray = $stdClassObjectArray3["TrifMultiProg"]; // Многократный (Мультишенген)
 		$TarifYearProgArray = $stdClassObjectArray3["TarifYearProg"]; // Многократный (Год)
@@ -182,43 +180,8 @@
 		//var_dump($stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"]);
 		//echo "<pre>"; print_r($stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"]); echo "</pre>";
 		
-		$CountriesArrays = $stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"];
-            
-                
-           /*     function GeneratorArrayValuteDate(){
-               global $OneCountry;
-                $CountriesArrays1 = array(array());
-                      foreach($CountriesArrays as $OneCo)
-                         {
-                          $CountriesArrays1[0] = $OneCountry[0];
-                          $CountriesArrays1[1] = $OneCountry[1];
-                          $CountriesArrays1[2] = $OneCountry[2];
-                          foreach($stdClassObjectArr as $One)
-                               {
-                                 if($One[0]==$OneCo[0])
-                                    {
-                                        $CountriesArrays1[3] =  strtoupper($OneCountry[2]);
-                                    foreach($CurrencyArrays as $Currencyval)
-                                        {
-                                        if (strtoupper($Currencyval[0]) == strtoupper($OneCountry[2]) )
-                                        {
-                                        $CountriesArrays1[4] = $Currencyval[2];
-                                        }
-                                            } 
-                                                }
-                                                     }                  
-                                                        }
-                                                         return $CountriesArrays1;  
-                                                         }*/
-														 
+		$CountriesArrays = $stdClassObjectArray2["2D816632-5329-4B1B-B1C6-B670316EA3DF"];													 
 		$CurrencyArrays = $stdClassObjectArray2["63665791-125E-46E7-878B-7E625EA62803"];
-         /*      function GeneratorArrayValuteDate()
-			   {
-
-			   global $CountriesArrays; //массив стран
-			   global $stdClassObjectArr;//массив MInSumm, который ставит в соответствие страну и валюту
-			   global $CurrencyArrays; //массив валют
-			 */ 
                 $CountriesArrays1 = array(array());
 				$i = 0;
                       foreach($CountriesArrays as $OneCo)
@@ -247,11 +210,8 @@
                                 } 
 						$i++;
                         }
-				 //return $CountriesArrays1;  
-				 //$CountriesArray = $CountriesArrays1;
-				/* }                 */
-       
-        echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
+    //todo: Тестировать массив на наличие валюты
+     //  echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
 		
 		
 		foreach($CountriesArrays as $OneCountry)
@@ -644,21 +604,6 @@
 					} 
 				 }
 			 }		
-		//echo "<pre>"; print_r( $currency); echo "</pre>";
-		//echo "<pre>"; print_r( $currencyRaw1); echo "</pre>";
-		//echo "<pre>"; print_r( $CurrencyArrays); echo "</pre>";
-               // echo $CurrencyArrays[1][2];
-                //echo '<br>'.$CurrencyArrays[0][2];
-                
-                function ListArray(){
-                    global $CurrencyArrays;
-                    global $CountriesArrays;
-                    $SumArray = $CurrencyArrays + $CountriesArrays;
-                    return $SumArray;
-                }
-                
-              //  print_r(ListArray());
-              // print_r(GeneratorArrayValuteDate());
                 
                 
                 
