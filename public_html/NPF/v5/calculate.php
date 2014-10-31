@@ -212,7 +212,7 @@
 						$i++;
                         }
     //todo: Тестировать массив на наличие валюты
-       echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
+      // echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
 		
 		
 		foreach($CountriesArrays as $OneCountry)

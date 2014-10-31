@@ -162,15 +162,9 @@
 															if ($v1[2] == $v2[2]) return 0;
 															return ($v1[2] < $v2[2])? -1: 1;
 														  }
-														
-															
-														//выведем в селект
-                                                                                                                $k = 0;
-														foreach($arr as $OneCountry){
-                                                                                                                
-                                                                                                                ++$k;
-														
-														?>
+	
+														//выведем в селект                                                                    
+														foreach($arr as $OneCountry){ ?>
 														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$OneCountry[4]?>" curency-raw="
                                                                                                                     <?php    
 //                                                                                                                    echo $CountriesArrays1[$k-1][4];
