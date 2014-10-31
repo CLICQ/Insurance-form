@@ -203,15 +203,16 @@
 											if (strtoupper($Currencyval[0]) == strtoupper($One[2]) )
 											{
 											//строковое обозначение валюты
-											$CountriesArrays1[$i][5] = $Currencyval[2];
+											$CountriesArrays1[$i][5] =$Currencyval[2];
 											}
                                         } 
-                                    }
+                                    }else {$CountriesArrays1[$i][5] = 'ЕВРО';
+                                    $CountriesArrays1[$i][4] = '43B13C6D-EEAF-4F35-A990-4236DCDAB212';}
                                 } 
 						$i++;
                         }
     //todo: Тестировать массив на наличие валюты
-     //  echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
+       echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
 		
 		
 		foreach($CountriesArrays as $OneCountry)

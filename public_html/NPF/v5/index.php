@@ -180,7 +180,7 @@
                                                                                                                 else if($OneCountry[5]=='ЕВРО'){
                                                                                                                 echo "EURO" ;  }
                                                                                                                 //todo:Установть нормальные коонстанты
-                                                                                                                else if($OneCountry[5]==null){echo "ЕВРО";}
+                                                                                                               // else if($OneCountry[5]==null){echo "ЕВРО";}
                                                                                                                  else{
                                                                                                                       echo "Currency Error";
                                                                                                                       
