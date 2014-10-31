@@ -604,16 +604,8 @@
 					} 
 				 }
 			 }		
-                
-                
-                
-       
-		
+
 		//конец я вставила вот это
-		
-		
-		
-		
 		// Дополнительные параметры страхования
 		if($_POST["amSport"]){$amSport='true';$amSportChecked='checked';}else{$amSport='false';$amSportChecked='';}
 		//чекбокс отмені поездки
@@ -770,7 +762,6 @@
 	//сохраним все переменные в сессию
 	$_SESSION['CountriesArrays']=$CountriesArrays;
         $_SESSION['CountriesArrays1']=$CountriesArrays1;
-        // GeneratorArrayValuteDate()= $CountriesArrays;
 	$_SESSION['amSportCalc']=$amSport;
 	$_SESSION['CancelTravel']=$CancelTravel;
 	$_SESSION['currency']=$currency;
