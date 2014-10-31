@@ -226,20 +226,21 @@
                           $CountriesArrays1[$i][0] = $OneCo[0];
                           $CountriesArrays1[$i][1] = $OneCo[1];
                           $CountriesArrays1[$i][2] = $OneCo[2];
+                          $CountriesArrays1[$i][3] = $OneCo[3];
                           
 						  foreach($stdClassObjectArr as $One)
                                {
                                  if(strtoupper($One[0])==strtoupper($OneCo[0]))
                                     {
 										//гуид валюты
-                                        $CountriesArrays1[$i][3] =  strtoupper($One[2]);
+                                        $CountriesArrays1[$i][4] =  strtoupper($One[2]);
 										
 										foreach($CurrencyArrays as $Currencyval)
                                         {
 											if (strtoupper($Currencyval[0]) == strtoupper($One[2]) )
 											{
 											//строковое обозначение валюты
-											$CountriesArrays1[$i][4] = $Currencyval[2];
+											$CountriesArrays1[$i][5] = $Currencyval[2];
 											}
                                         } 
                                     }
@@ -250,7 +251,7 @@
 				 //$CountriesArray = $CountriesArrays1;
 				/* }                 */
        
-        //echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
+        echo "<pre>"; print_r($CountriesArrays1); echo "</pre>";
 		
 		
 		foreach($CountriesArrays as $OneCountry)
@@ -823,6 +824,7 @@
 	
 	//сохраним все переменные в сессию
 	$_SESSION['CountriesArrays']=$CountriesArrays;
+        $_SESSION['CountriesArrays1']=$CountriesArrays1;
         // GeneratorArrayValuteDate()= $CountriesArrays;
 	$_SESSION['amSportCalc']=$amSport;
 	$_SESSION['CancelTravel']=$CancelTravel;

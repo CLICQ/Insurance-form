@@ -145,11 +145,14 @@
 														$arr = array();
 														$i = 0;
 														//сформируем массив
-														foreach($_SESSION['CountriesArrays'] as $OneCountry)
+														foreach($_SESSION['CountriesArrays1'] as $OneCountry)
 															{
 																$arr[$i][0] = $OneCountry[0];
 																$arr[$i][2] = $OneCountry[2];
+                                                                                                                                
 																if ( $OneCountry[3] != NULL ) $arr[$i][3] = "Шенген";
+                                                                                                                                $arr[$i][4] = $OneCountry[4];
+                                                                                                                                $arr[$i][5] = $OneCountry[5];
 																$i++;
 															}
 														usort($arr, "compare"); // Вызываем пользовательскую сортировку
@@ -168,20 +171,20 @@
                                                                                                                 ++$k;
 														
 														?>
-														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$CountriesArrays1[$k-1][0]?>" curency-raw="
+														<option <?if($_SESSION["CountryID"]==$OneCountry[0]){echo "selected";}?> value="<?echo $OneCountry[0]?>" curency-guid="<?=$OneCountry[4]?>" curency-raw="
                                                                                                                     <?php    
 //                                                                                                                    echo $CountriesArrays1[$k-1][4];
-                                                                                                                if($CountriesArrays1[$k-1][4]=='ДОЛЛАР США'){
+                                                                                                                if($OneCountry[5]=='ДОЛЛАР США'){
                                                                                                                     echo "USD";
                                                                                                                 }
-                                                                                                                else if($CountriesArrays1[$k-1][4]=='ЕВРО'){
+                                                                                                                else if($OneCountry[5]=='ЕВРО'){
                                                                                                                 echo "EURO" ;  }
                                                                                                                  else{
                                                                                                                       echo "Currency Error";
                                                                                                                       
                                                                                                                   }
                                                                                                                 
-                                                                                                                        ?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3].' '.$OneCountry[4];?></option>
+                                                                                                                        ?>" atr="<?=$OneCountry[3]?>"><?=$OneCountry[2].' '.$OneCountry[3];?></option>
 													<?}?>
 												</select>
 											</div>
