@@ -5,18 +5,12 @@
     <title>НПФ "Русский Стандарт"</title>
     <link rel="stylesheet" href="../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../css/lk.css"/>
-   
-	
-	
-  
-	
+
 	<!--<link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
 	<link rel="stylesheet" type="text/css" href="jquery-ui.min.css"/>
 	<link rel="stylesheet" type="text/css" href="theme.css"/>-->
 	
-	
-	
-	
+S
 	<!--<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="jquery-ui.js"></script>-->
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -46,11 +40,7 @@
 
 	-->
 	
-  
-	
-	
-	
-	<script type="text/javascript" src="../js/mootools-core-1.4.5-full-nocompat-yc.js"></script>
+    <script type="text/javascript" src="../js/mootools-core-1.4.5-full-nocompat-yc.js"></script>
     <script type="text/javascript" src="../js/mootools-more-1.4.0.1-yui.js"></script>
     <script type="text/javascript" src="../js/common.js"></script>
 	
@@ -266,7 +256,7 @@
 		}		
 		
 
-		$EffectiveDate = $_POST["EffectiveDate"];
+		$EffectiveDate =  $_POST["EffectiveDate"];
 		
 		$ExpirationDate = $_POST["ExpirationDate"];
 		

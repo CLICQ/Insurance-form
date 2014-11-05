@@ -215,7 +215,7 @@
 														<label class="b-form-elem_label" style="width:135px;font-weight:normal" for="CheckIn">Дата начала</label>
 													</div>	
 													
-													<input type="text" id="EffectiveDate" class="DatePicker b-form-elem_control b-elem-calendar js-checkOut" name="EffectiveDate" placeholder="гггг-мм-дд" readonly="readonly" onclick="$('#EffectiveDate').datepicker('show');" value="<?=$_POST["EffectiveDate"]?>"  >
+													<input type="text" id="EffectiveDate" class="DatePicker b-form-elem_control b-elem-calendar js-checkOut" name="EffectiveDate" placeholder="гггг-мм-дд" readonly="readonly" onclick="$('#EffectiveDate').datepicker('show');" value=<? echo "'test'"?>  >
 														
 													<div class="pickadate__holder">
 														<div class="pickadate__calendar--wrap">

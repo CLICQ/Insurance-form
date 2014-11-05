@@ -214,7 +214,10 @@
 														<label class="b-form-elem_label label-date"  for="CheckIn">Дата начала</label>
 													</div>	
 													
-													<input type="text" id="EffectiveDate" class="DatePicker b-form-elem_control b-elem-calendar js-checkOut" name="EffectiveDate" placeholder="гггг-мм-дд" readonly="readonly" onclick="$('#EffectiveDate').datepicker('show');" value="<?=$_SESSION["EffectiveDate"]?>"  >
+													<input type="text" id="EffectiveDate" class="DatePicker b-form-elem_control b-elem-calendar js-checkOut <? if(!$_SESSION['EffectiveDate']){echo 'warning';}?>"
+                                                                                                               name="EffectiveDate" placeholder="гггг-мм-дд" readonly="readonly"
+                                                                                                               onclick="$('#EffectiveDate').datepicker('show');"
+                                                                                                               value=<? if($_SESSION["EffectiveDate"]){echo $_SESSION["EffectiveDate"];}else{echo "'гггг-мм-дд'";}?>  >
 														
 													<div class="pickadate__holder">
 														<div class="pickadate__calendar--wrap">
@@ -565,6 +568,7 @@ $('#divCurrencyId').text(currency)
 <script>
 	$(document).ready()
 	{ 
+            
 		
 		//стилями регулируем что отображать в зависимости от выбора типа полиса однократный/многократный
 		if ($('#groupOfProgram1').attr('checked')=="checked")
@@ -665,6 +669,9 @@ $('#divCurrencyId').text(currency)
 										}
 									}
 								isAllFill();
+                                                                if($(this).attr('id')==="EffectiveDate" ){
+                                                                 $("#EffectiveDate").removeClass("warning");
+                                                             }
 								isChange();
 								//чтобы при открытии дейтпикера нельзя было выбрать дату раньше чем дата начала поездки +1 день (уточнить у Татьяны)
 								if (begDate != 'Invalid Date')

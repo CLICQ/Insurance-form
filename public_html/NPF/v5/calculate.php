@@ -300,7 +300,7 @@
 							$_SESSION['divInpAdvParamBag'] = 'style="display:none"';
 							
 							//добавим дополнительный атрибут, который будет содержать value для radio, чтобы при нажатии на чекбокс знать какой радио-сумму включать
-							$Attr = "currency-value-on='50000' currency-value-off='15000' is-group='1'";
+							$Attr = "currency-value-on='50000' currency-value-off='15000' currency-value-off='30000' is-group='1'";
 						}
 					else if ( in_array($Country, $CountrySNG) )
 							{

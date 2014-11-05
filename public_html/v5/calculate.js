@@ -32,7 +32,7 @@ function declination(a, b, c, s)
 function isAllFill()
 	{
 		//для рассчета полиса должны быть заполнены
-		if ($('#EffectiveDate').val() != "гггг-мм-дд" //дата начала
+		if ($('#EffectiveDate').val() !== "гггг-мм-дд" //дата начала
 			 && parseInt($('#daysCount').val()) > 0 //дата конца или кол-во дней
 			 &&	parseInt($('#PeopleCount').val()) > 0// количество путешественников
 			 )
